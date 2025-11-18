@@ -1,5 +1,5 @@
 
-# Core Concepts
+#### Core Concepts
 - **Monitoring** = Collecting known signals to track system health.
 - **Observability** = Ability to understand why the system behaves a certain way, using logs, metrics, traces.
 
@@ -439,7 +439,7 @@
 
 
 
-# am an AWS cloud Platform engineer for monitoring & Observability am going to be part of On-prem to AWS cloud Migration and i am expected setup monitoring using the below tools/services Amazon Managed Prometheus Amazon Managed Grafana Opentelemetry Loki RDS Elastic cache TimeSync AWS ELB AWS Network Firewall AWS MSK AWS KMS AWS Transfer Family AWS Secret Manager AWS API Gateway Route 53 To my role help me understand and give a clear picture and give any input that can help expected environment
+#### am an AWS cloud Platform engineer for monitoring & Observability am going to be part of On-prem to AWS cloud Migration and i am expected setup monitoring using the below tools/services Amazon Managed Prometheus Amazon Managed Grafana Opentelemetry Loki RDS Elastic cache TimeSync AWS ELB AWS Network Firewall AWS MSK AWS KMS AWS Transfer Family AWS Secret Manager AWS API Gateway Route 53 To my role help me understand and give a clear picture and give any input that can help expected environment
 
 What each service means for observability
 
