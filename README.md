@@ -153,7 +153,247 @@
      - Use CloudTrail Lake for queries
      - Integrate with GuardDuty & Security Hub
 
-## Questions
+## Q & A
+
+#### p99 latency spikes, but CPU/memory/traffic normal — how to troubleshoot end-to-end?
+- Verify scope & timing: confirm service/region/az, exact time window (absolute timestamps).
+- Check traces: look at p99 traces — which span(s) contribute most to latency?
+- Logs for slow requests: search for requests in that time window by trace-id / request-id.
+- Downstream dependencies: check DB, caches, 3rd-party APIs, network (VPC Flow Logs), DNS resolution.
+- Resource limits not captured by CPU/mem: check IO (disk, network), thread/connection pools, GC pauses.
+- Deployment or config changes: correlate with deploys, config flips, autoscaling events.
+- Mitigation: rollback or route traffic to healthy instances; add circuit breakers, increase timeouts/retries, fix root cause.
+
+#### Intermittent 5xx from a microservice, only from one node, logs look clean — what to investigate?
+- Node-level telemetry: kernel logs, kubelet, container runtime (docker/containerd), disk I/O, NIC errors.
+- Network path: VPC Flow Logs for that node’s ENI, check iptables, CNI plugin, MTU mismatches.
+- Host resource exhaustion: file descriptors, ephemeral ports, ulimit, socket backlog.
+- Hardware or virtualization anomalies: noisy neighbor, NIC driver bug.
+- Sidecars / injection issues: e.g., envoy / proxy misconfiguration on that node.
+- Reproduce: cordon & recreate pods on a different node; if error disappears, node is culprit.
+- Fix: drain node, reprovision, patch runtime/CNI, add monitoring for the detected metric.
+
+#### CloudWatch shows sudden drop in ALB request count, but app logs show traffic arriving normally — debug steps?
+- Confirm timestamps & timezones to avoid misinterpretation.
+- Compare ALB access logs vs app logs — if ALB shows low but app sees requests, maybe requests bypassed ALB (direct IP) or logs are filtered.
+- Check ALB target health & routing rules — some targets might be deregistered or routing changed.
+- CloudWatch metric granularity — maybe metric resolution/aggregation hides short spikes.
+- Time skew / ingestion lag — CloudWatch metrics sometimes lag; check recent raw logs.
+- Instrumentation mismatch — app logs may include internal requests not fronted by ALB.
+- Fix: ensure ALB access logging, verify correct metric dimensions, fix routing or metric collection.
+
+#### Service is slow only during deployments — how to instrument and find the bottleneck?
+- Collect deployment timeline (start/end, steps).
+- Trace through deployment path: instrument deployment hooks, readiness/liveness probes.
+- Check warm-up vs cold-start: container image pull times, JVM cold-starts, cache warming.
+- Traffic shifting strategy: rolling update config — check maxUnavailable, surge, draining behavior.
+- Shared resources: check DB connections exhausted during parallel restarts, connection pool limits.
+- Instrument ephemeral metrics: pod startup time, init container logs, image pull latency, DB connection errors.
+- Mitigate: adopt blue/green or canary, pre-warm caches, increase pool sizes or stagger rollouts.
+
+#### Worker queue (SQS → Lambda) backed up, but Lambda duration normal — next steps?
+- Check concurrency and throttles: are Lambdas being throttled (concurrency limits)?
+- Visibility timeout & retries: are messages reappearing due to timeout or failures?
+- Dead-letter queue: examine DLQ for failing messages.
+- Provisioned concurrency cold-starts: normal duration might hide occasional cold starts causing backlog.
+- Downstream bottlenecks: Lambda may complete but downstream systems (DB, APIs) are slow and not processing.
+- Scaling config: SQS queue scaling settings, Lambda reserved concurrency.
+- Fix: increase concurrency, tune visibility timeout/retries, process DLQ, add autoscaling or batch processing.
+
+#### CloudWatch Logs bill doubled — how to find culprit and fix pipeline?
+- Identify cost spike time and correlate with deployments or traffic changes.
+- Use CloudWatch Logs Insights to aggregate bytes ingested per log group; sort by ingestion size.
+- Find noisy services: top N log groups by volume → inspect log level/config.
+- Check subscription filters that might duplicate logs (multiple sinks).
+- Mitigations: lower log verbosity, apply sampling, use structured logs with fewer repeated fields, set retention and move to S3, filter at source via FluentBit.
+- Longer term: implement log-quota and alerting on ingestion growth.
+
+#### Incomplete logs from EKS (missing lines / out of order) — likely causes?
+- Log buffering / batching at FluentBit/driver level causing flush truncation on container exit.
+- Stdout/stderr interleaving and non-line-terminated logs (no newline at end).
+- High throughput and backpressure causing agent to drop lines.
+- Container restarts before logs flushed.
+- File rotation / log truncation at host level.
+- Fixes: ensure line buffering, use structured JSON logs, increase FluentBit buffer size, graceful shutdown hooks, persistent logging to disk before shipping.
+
+#### OpenSearch query latency high and dashboards slow — what to check?
+- Cluster health: CPU, heap pressure, GC, disk I/O, shard allocation, and node/network issues.
+- Slow queries: review slowlog; identify expensive aggregations or wildcard queries.
+- Hot shards: uneven shard distribution or too many shards per node.
+- Indexing/refresh settings: heavy indexing impacts search.
+- Resource limits: JVM heap sizing and file descriptors.
+- Mitigations: optimize mappings, reduce shards, increase nodes, cache aggregations, precompute heavy queries or use rollups.
+
+#### CloudWatch CPU differs from node-exporter metrics in Prometheus — why?
+- Metric definition & granularity mismatch (avg vs instant vs sample interval).
+- Where metric is measured: CW measures at hypervisor/instance level; node-exporter measures inside OS — container vs host differences.
+- Aggregation windows: different collection intervals and statistic (Average/Sum/Maximum).
+- Namespace/dimension mismatches (e.g., per-core vs total).
+- Clock skew or scraping delays.
+- Explain in interview: identify both metric definitions, reconcile by aligning intervals and definitions.
+
+#### High-cardinality metrics exploding CloudWatch usage — how to control?
+- Identify offending labels (user IDs, request IDs, emails).
+- Remove or roll up high-cardinality tags at the ingestion point.
+- Use metric dimensions sparingly; emit counts/aggregates rather than unique values.
+- Use logs instead for high-cardinality troubleshooting, and extract metrics selectively via Metric Filters.
+- Sampling and cardinality capping in ADOT or collector.
+- Consider Prometheus with appropriate relabeling rules for transient dimensions.
+
+#### Traces from a single service missing in X-Ray — steps?
+- Check instrumentation: ensure SDK enabled in that service and tracer initialized.
+- Sampling config: check if sample rate is too low or disabled.
+- Exporter/collector health: ADOT config forwarding to X-Ray; check logs for errors.
+- Network / IAM permissions: ensure service has permission to send segments to X-Ray.
+- Clock skew & large payloads: verify timestamps and payload size limits.
+- Fix: re-enable instrumentation, increase sampling temporarily, validate IAM, restart collector.
+
+#### Broken trace graphs (orphan spans, missing parents) — causes?
+- Incorrect context propagation: trace headers not forwarded in HTTP/gRPC calls.
+- Different trace formats (W3C vs vendor) causing lost parent-child mapping.
+- Sampling mismatch across services.
+- Async work without context propagation (background threads, message queues).
+- Instrumentation bugs that create new root spans instead of child spans.
+- Fix: enforce W3C, propagate headers in all client libs, instrument queue consumers to link spans.
+
+#### Trace IDs generated but logs don’t show them — where to look?
+- Logging middleware: ensure trace ID is injected into logger context (e.g., MDC, structured log fields).
+- Log library config: verify logging format includes context fields.
+- Batching/sampling differences: sampled-out traces may not be logged.
+- Asynchronous logging that detaches context — ensure context propagation into worker threads.
+- Fix: add trace ID enrichers, middleware, or use correlation libraries; ensure structured JSON logs include trace_id.
+
+#### ADOT Collector dropping spans under high load — how to debug?
+- Collector metrics: check queue length, dropped spans, memory/CPU usage.
+- Configure batching & retry parameters and increase buffer sizes.
+- Backpressure mechanisms: ensure exporter is not the bottleneck (X-Ray / external APM).
+- Scale collectors: run more daemonset replicas or sidecars; use head-based sampling.
+- Apply sampling rules at source to reduce volume of low-value spans.
+- Fix: tune queue/batch sizes, scale horizontally, improve exporter throughput.
+
+#### Long latencies but traces show each hop is fast — what else could be slow?
+- Client-side wait time (e.g., queuing before request reaches first service).
+- Network issues: TCP retransmits, DNS lookup delays, SSL handshake.
+- Outside-trace work: time spent in load balancer, retries, or proxy not instrumented.
+- Resource starvation at infra level: kernel schedulers, IO blocking, container CPU throttling (cfs).
+- Instrumentation blind spots: missing spans around blocking operations.
+- Fix: instrument network layer, measure TCP metrics, add spans for LB/proxy, check host-level metrics.
+
+#### On-call gets alerts at night but systems are normal when checked — how to stop flapping alerts?
+- Verify false positives: correlate alert time with temporary metric blips or noisy thresholds.
+- Increase alert evaluation windows or require sustained violation (e.g., 3 of 5 datapoints).
+- Add hysteresis & deduplication: require both threshold and trend criteria.
+- Use anomaly detection to avoid static thresholds in noisy metrics.
+- Add maintenance windows or suppression for noisy periods (deploys, backups).
+- Adjust severity and add runbook guidance to reduce wake-ups for low-actionable alerts.
+
+#### Service meets SLA but violates SLO — how to detect operationally?
+- Define clear SLO metric and measurement window (availability = good / total requests).
+- Compute SLO via Metric Math in CloudWatch or Grafana SLO plugin.
+- Detect violation by comparing rolling windows to SLO thresholds and trigger error-budget burn alerts.
+- Explain difference: SLA is contractual/legal; SLO is operational target — SLA might be broader.
+- Operational action: pause releases, run RCA, reallocate resources per error-budget policy.
+
+#### Traffic doubled unexpectedly; error budget burn high — next steps?
+- Mitigate immediate risk: throttle nonessential traffic, enable rate limits, scale up capacity.
+- Identify failing components via Golden Signals and traces — errors likely from overloaded downstream.
+- Adjust autoscaling: check if ASG/EKS scaling is responding properly.
+- Error budget policy: if burn rate high, enforce release freeze and incident priority.
+- Longer term: increase capacity, optimize code paths, introduce backpressure and graceful degradation.
+
+#### Design multi-window burn-rate alerts for an API — choose windows & why?
+- Short window: e.g., 1 hour for fast burn detection (catching sudden regressions).
+- Medium window: 6 hours to detect persistent but not instant problems.
+- Long window: 7 days for slow degradation and trend detection.
+- Reason: fast window triggers immediate mitigation; medium avoids noisy reaction; long enforces business-level reliability.
+- Set thresholds proportionally (e.g., higher sensitivity for short windows, lower for long).
+
+#### Team wants SLO tightened from 99.5% to 99.9% — trade-offs to highlight?
+- Error budget reduction: 99.5% -> 99.9% reduces allowable failures by ~5x (operationally much tighter).
+- Cost: requires more redundancy, capacity, and possibly more expensive geographic distribution.
+- Complexity: tighter SLAs often need sophisticated failover, more testing, and stricter deployment policies.
+- Diminishing returns: evaluate business value vs engineering effort.
+- Suggest incremental approach: pilot on critical endpoints only.
+
+#### Logs in S3 are slow to query — how to speed investigations?
+- Use partitioning & compression: partition by date/service and use columnar formats (Parquet).
+- Use Athena with properly defined partitions and Glue catalog for faster queries.
+- Maintain recent hot storage: keep last X days in OpenSearch for fast search while archiving older to S3.
+- Precompute indexes or use log-indexing pipelines (Firehose → OpenSearch).
+- Implement log sampling and retention policy to reduce volume.
+
+#### Design log ingestion for 50k EKS pods generating 5 TB/day — approach?
+- Edge filtering: drop debug/noise at source; enforce structured logging.
+- DaemonSet agents (FluentBit) with backpressure and buffering to local disk.
+- Sharding & batching: use Kinesis Firehose for buffering and parallel ingestion.
+- Tiered storage: hot (OpenSearch for last N days), warm (S3 + Athena), cold (glacier).
+- Cost controls: sampling, dynamic log levels, quotas per namespace, and rate limits.
+- Observability infra: autoscaling for ingestion pipeline, monitoring for dropped logs.
+
+#### Migrate from CloudWatch Logs to OpenSearch with zero downtime — approach?
+- Dual-write: start writing logs to both CloudWatch and OpenSearch (via Firehose or FluentBit outputs).
+- Sync historical data: backfill existing S3 archived logs into OpenSearch in batches.
+- Verify parity: run queries against both systems and compare results for sampling windows.
+- Switch consumers: update dashboards and alerting to read from OpenSearch; keep CW as fallback.
+- Cutover & deprecate: after verification, stop dual-write and retire older pipeline incrementally.
+
+#### Full transaction-level tracing across Lambda, DynamoDB, SQS, API Gateway — how?
+- Propagate trace IDs: ensure API Gateway/Lambda pass X-Ray or W3C headers and instrument Lambdas with X-Ray/ADOT.
+- Instrument queue messages: attach trace-id as message attribute when sending to SQS and read it in the consumer to continue span.
+- DynamoDB: instrument SDK calls or enable tracing at SDK level; annotate spans with low-level DB timing.
+- Use ADOT collector to aggregate spans and export to X-Ray/Tempo.
+- Ensure sampling and retention to capture end-to-end traces for failed transactions.
+
+#### Packet drops in EKS but node logs show nothing — how to debug networking?
+- Collect VPC Flow Logs for the affected ENIs to detect drops and rejected packets.
+- Check CNI metrics (e.g., aws-vpc-cni) for IP exhaustion, NAT gateway limits, or ENI issues.
+- Use tcpdump on host and pod to capture packets and compare timestamps.
+- Check network policies & security groups and throughput quotas on ENIs/NAT/GW.
+- Inspect kernel counters (tx/rx errors), and netfilter/conntrack table saturation.
+- Fix: increase NAT capacity, tune conntrack, fix misconfigured network policies.
+
+#### CloudWatch alarm evaluation slow (delayed alarms) — what to check?
+- Metric resolution & period settings: alarms with long evaluation periods will trigger late.
+- Metric ingestion lag: check if metrics are delayed (high ingestion latency).
+- High cardinality or metric volume causing CloudWatch throttling.
+- Alarm type: anomaly detection may require more data.
+- Fix: reduce evaluation window where appropriate, improve metric emit cadence, reduce cardinality, or use higher resolution metrics.
+
+#### Prometheus scraping slow & missing metrics in EKS — debug flow?
+- Check scrape targets: target endpoints, timeouts, and scrape intervals.
+- Network latency & DNS for service discovery.
+- Target response time: instrument /metrics endpoint; heavy queries can slow scrape.
+- Prometheus scrape concurrency & relabeling costs: too many targets or expensive relabel configs.
+- Resource starvation of Prometheus pods (CPU/mem/IO).
+- Fix: increase Prometheus resources, reduce scrape frequency, sharding/prometheus federation, optimize /metrics endpoints.
+
+#### Reduce observability cost by 40% without losing visibility — what to cut first?
+- High-cardinality metrics: remove/drop expensive dimensions.
+- Log verbosity: turn debug logs to info in prod; sample high-volume logs.
+- Retention policies: move older logs/metrics to cheaper storage (S3/Parquet).
+- Indexing: reduce indexing in OpenSearch; index only fields needed for search.
+- Optimize collection: use sampling and aggregation at source; consolidate duplicate pipelines.
+- Negotiate with vendors: review pricing tiers and ingest commitments.
+
+#### OpenSearch indexing rate at max, writes failing — scale safely?
+- Throttle indexing temporarily (ingest rate limiting) to stabilize cluster.
+- Add data nodes or increase instance types for IO and heap.
+- Reduce refresh interval and bulk index with larger batches.
+- Reindex into larger shards carefully; avoid rebalancing during peak writes.
+- Use rollover indices and ILM to manage indices and retention.
+- Monitor for GC and disk pressure while scaling; perform changes during low traffic.
+
+#### CloudWatch Logs ingestion throttling during peak traffic — fix?
+- Check subscription filter throughput and Kinesis/Firehose limits.
+- Increase Firehose throughput (shards) or Kinesis stream capacity.
+- Buffer logs at agent: increase agent buffer size and local disk for backpressure.
+- Apply source filtering to drop low-value logs before ingestion.
+- Use direct S3 batching for archival and keep OpenSearch for hot searches only.
+- Set alerts on dropped logs/Throttled events and automate scaling of ingestion pipeline.
+
+
+
+## Ques
 
 🔥 Incident & Troubleshooting Scenarios
 1. Your API’s p99 latency suddenly spikes, but CPU, memory, and traffic are normal. How do you troubleshoot end-to-end?
