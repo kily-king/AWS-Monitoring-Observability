@@ -52,8 +52,8 @@
           - Errors
           - Saturation
 - SLO/SLA/SLA Enforcement
-          - Error budget calculation
-          - SLO dashboards via CloudWatch or Grafana
+           - Error budget calculation
+           - SLO dashboards via CloudWatch or Grafana
 - Alerting Standards
           - Unified alert routing: SNS → PagerDuty/Slack
           - Alert playbooks & auto-remediation (Lambda / SSM runbooks)
