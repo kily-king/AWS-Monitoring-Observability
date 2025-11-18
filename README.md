@@ -161,30 +161,35 @@
 3. CloudWatch shows sudden drop in request count for an ALB, but app logs show traffic coming in normally. How do you debug?
 4. A service is slow only during deployments. How do you instrument and find the bottleneck?
 5. Your worker queue (SQS → Lambda) is backed up. CloudWatch metrics show Lambda duration normal. What next?
+
 🔥 Log & Metric Issues
 6. Your CloudWatch Logs bill suddenly doubled. How do you find which service caused it and fix the pipeline?
 7. You receive incomplete logs from EKS (missing lines or out of order). What are the root causes you suspect?
 8. OpenSearch query latency is high and dashboards are slow. What do you check?
 9. CloudWatch Metrics for CPU differ from node-exporter metrics in Prometheus. Why?
 10. You see high cardinality metrics exploding CloudWatch usage. How do you control it?
+
 🔥 Distributed Tracing & Correlation Scenarios
 11. Traces from a single service are missing from X-Ray. Others are fine. What steps do you take?
 12. You see broken trace graphs (orphan spans, missing parents). What are the causes?
 13. Trace IDs are generated, but logs don’t show them. Where do you look?
 14. How do you debug a scenario where ADOT Collector is dropping spans under high load?
 15. You see long latencies in a microservice but trace shows each hop is fast. What else could be slow?
+
 🔥 Alerts, SLOs, and Error Budgets
 16. Your on-call receives high-severity alerts at night, but by the time you check, everything is normal. How do you stop “flapping” alerts?
 17. A service meets its SLA but violates SLO. Explain how you detect this operationally.
 18. Traffic doubled unexpectedly. Error budget burn rate is high. What are the next steps?
 19. You need to design multi-window burn rate alerts for an API. What windows do you choose and why?
 20. A team wants to tighten SLO from 99.5% to 99.9%. What trade-offs do you highlight?
+
 🔥 Observability Architecture & Design Scenarios
 21. Your logs are stored in S3, but queries are slow. How do you speed up investigation?
 22. How would you design log ingestion for 50k EKS pods generating 5 TB/day logs?
 23. You need to migrate from CloudWatch Logs to OpenSearch with zero downtime. What’s the approach?
 24. A service uses Lambda, DynamoDB, SQS, and API Gateway. How do you implement full transaction-level tracing?
 25. You see packet drops in EKS but node logs show nothing. How do you debug networking?
+
 🔥 Performance & Cost Optimization Scenarios
 26. CloudWatch alarm evaluation is slow (delayed alarms). What do you check?
 27. Prometheus scraping is slow and missing metrics. How do you debug scrape performance in EKS?
