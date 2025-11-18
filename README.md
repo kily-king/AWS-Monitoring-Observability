@@ -842,18 +842,5 @@ Capture:
 
 These become migration success metrics.
 
----
-
-# ⭐ **If you want, I can also generate:**
-
-✅ A **full architecture diagram** for printable PDF
-✅ A **1-page cheat sheet** of your responsibilities
-✅ A **Runbook** for all observability pipelines
-✅ A **Terraform module layout** for monitoring stack
-✅ **Interview-style Q&A** for this role
-
-Just tell me “generate all" or ask piece by piece.
-
-
 
 
