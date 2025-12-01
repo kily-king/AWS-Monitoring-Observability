@@ -1,0 +1,218 @@
+Caller
+8:43 PM
+Oh, you're for the requirements gathering by next. I mean, I'm not, I'm not saying you have to commit to it in 24 hours. I'm just trying to get a sense for how far you like what what of these green epic tasks here, right? The of the pattern do you think you're going to accomplish by the end of this Sprint, which is 2 weeks from now?
+cat
+8:43 PM
+Um.
+Kumar
+8:43 PM
+This.
+That I'm not.
+Caller
+8:43 PM
+No.
+Abhi
+8:43 PM
+Yeah, so I would like to bring a point here. So it for the this one it looks more into event collector application, right? So some of the section is lying on the right side and some of the sections are lying on the left side. So on the right side whatever the application is handling.
+We require someone who has got the experience on that part to handle those aspects. So whatever the on the left side like it is like communicating with the Azure IoT hub and how it is getting communicated and how those accesses can be migrated to AWS that we can do.
+But whatever it is communicating from the IoT hub to the application side, I think that part we need to assign it to somebody on the development.
+Caller
+8:44 PM
+So the good news is you're only responsible for the right hand side as part of this pattern. So you don't really have to worry about the left hand side. But I'm not. I'm also not necessarily like saying you have to go finish it right now. I'm asking it sounds like you're starting to get your head wrapped around the problem. I'm I'm asking how long you think it's going to take.
+Abhi
+8:44 PM
+OK.
+Caller
+8:44 PM
+To go through that design process and then get to like, hey, I've got a target state that I want to align on and start moving towards. That's that's really the question here is is kind of a projection of where you think you'll be in two weeks and it doesn't have to be accurate necessarily, right? We just want to measure progress, so.
+Kumar
+8:44 PM
+Good.
+Caller
+8:45 PM
+That's really what I'm what I'm asking for is just kind of putting a a line in the sand that we can measure against to figure out our pace.
+Kumar
+8:45 PM
+Yeah, yeah, you can take 1-2 weeks, so yeah.
+Lead
+8:45 PM
+And just very, very small question just so that I clear about the expectation with device management MVP, we are not looking at IoT solution, right?
+Caller
+8:45 PM
+cat
+8:48 PM
+Yep.
+Lead
+8:48 PM
+Yeah.
+cat
+8:48 PM
+Correct.
+Caller
+8:48 PM
+And we should consider, you know, whatever resiliency is baked into the process right now in terms of how we handle that. So it's it's really actually like not that huge of an ask. It's just that we need a way to get our current state like device observability mirrored in a WS.
+Lead
+8:49 PM
+Yes.
+Yes.
+Yes, so.
+Caller
+8:49 PM
+The other stuff you were talking about with IoT and whatnot, that's like our our long term future redesign of how we do everything to do with devices.
+Lead
+8:49 PM
+Yes, North Star. Got it, got it. So quick, quick question. So far with this MVP we would be duplicating the traffic, right? Azure Event Hub to ODS, but it'll also go to S3.
+cat
+8:49 PM
+Yep, Yep.
+Lead
+8:49 PM
+I mean, we would be duplicating the the events, right? Yeah, not.
+cat
+8:49 PM
+I wouldn't.
+Correct.
+Caller
+8:49 PM
+This is really to support like the tactical need for the field that our AWS solution has to to bridge a gap that um hasn't been solved for in the transformation pattern yet.
+cat
+8:49 PM
+Correct.
+cat
+8:52 PM
+Yeah, yeah.
+Abhi
+8:53 PM
+Yes, sure. And just to add like there is push from the DMS service as well. So for example is if there is a like firmware upgrade or anything update with which is record on the devices that is also getting pushed to the.
+Boss
+8:53 PM
+So Abhijeet, that's where I think this and this is getting confusing because I think you're expanding the scope. Put all that stuff aside. That's a separate problem to Daniel's point in a separate room. Right now there's a set of data that's going to land in a Kafka topic.
+We need that Kafka topic in an Azure world splits into two spots. It goes to snow and ODS.
+The way in which either of those happen both break when we move to AWS. We got to fix those two problems, period. Hard stop. Like how the data gets to Kafka right now you can think of as black magic. We're going to solve that problem somewhere else. Just assume it's in Kafka. We have to consume it and then go do something with it.
+Abhi
+8:54 PM
+Still got it good.
+Caller
+8:54 PM
+I'm gonna call it that to be a little bit maybe maybe that solves the the need that you were looking for Prakhar so.
+That's what I expect to see is the output of this gathering requirements and current state assessment, right? Like, first of all, like, I want to make sure we're really clear on what the problem is and what Phil is doing right now. What's that sequel? Like what are the kinds of things that we need to get to snow? How does, how does it get there today?
+Target state is everything that Dave just said, right? What are our technology selections that are going to solve that problem and render the data to the right place?
+I was really hoping we would be able to kick off the Sprint today with an amount of work that that we think we can confidently achieve in the next two weeks. Feels like we're a little short of information, or at least estimation.
+Let's circle back to this device monitoring one. I wanna talk about account provisioning. It looks like Abhijeet, you were grooming these. What? What are your expectations around these? What do we think you're going to achieve?
+Abhi
+8:55 PM
+The requirement capability section on the first part of the deployment is steps I can proceed on the next coming week.
+This week.
+Caller
+8:55 PM
+OK. So you think it sounds like you're going to, you're doing both of these in the current Sprint, right? The next two weeks, is that what you were suggesting? Sorry if I misunderstood.
+Abhi
+8:55 PM
+Yeah, yeah, sure.
+I guess it's the same board.
+But yeah, I can ask him again. I I happened to saw the stories in the same board.
+So that is one. And second question is about understanding the business object modeling is on a different board altogether. So are we tracking it somewhere else?
+Caller
+8:58 PM
+What? What is on somewhere else?
+Lead
+8:58 PM
+The business object modeling story.
+Caller
+8:58 PM
+I'm moving those to this board. When I created the backlog for Abhijeet and Shirisha there, this board didn't exist yet, so I'm I'm moving it over probably today and I'll they'll be informed.
+Abhi
+8:58 PM
+So cool.
+Lead
+8:58 PM
+Amazing. Yep, that's all. Thank you.
+Caller
+8:58 PM
+All right, we've got an active Sprint then. So happy, happy sprinting everyone.
+cat
+8:59 PM
+So now that we kicked off a Sprint, when are we targeting this end? Are we going to try and get on a rhythm and a cadence? Are we just going to do 2 weeks from today? How do we want to to to manage that?
+Caller
+8:59 PM
+It's a great question. I was thinking it would be good for us to schedule.
+Maybe a a demo of some kind whether it's halfway through or at the end or both. I would I would love to be able to see that because I I think with this one halfway through would be good cause there's a lot of design stuff. We can also do that ad hoc in these check-ins.
+cat
+8:59 PM
+Correct.
+Yeah.
+Caller
+8:59 PM
+Um, going forward. Um.
+See.
+cat
+8:59 PM
+So our Sprint date is one through the 15th. So today is is is day one of Sprint one. Is that a fair assessment?
+Caller
+8:59 PM
+That's right.
+cat
+9:00 PM
+And then I I very much agree. I think we do need a a midweek Sprint, especially with the requirements. We can kind of go through each of the requirements that you guys have collected. We can talk about what what the design that you guys are looking at in in that same session.
+But I would rather do that on a weekly basis rather than a biweekly, just to make sure that we are in alignment.
+Tell you guys really good.
+Caller
+9:00 PM
+Maybe Friday we we do a mid sprint touch point here and then.
+The following Friday.
+Is not only an off Friday for cubic, but I'll also be at a wedding in Mexico. Um. But I think others can can uh be at the helm for that one. Um.
+Does that, yeah.
+cat
+9:00 PM
+OK, so.
+Ben
+9:00 PM
+You want to try to do this Thursday night US time or, I'm sorry, Thursday morning US time, because Friday morning our time ends up being very late for these guys. Yeah, yeah.
+cat
+9:00 PM
+I'm in alone.
+Friday night, third time.
+Your time.
+Caller
+9:01 PM
+Yeah.
+Ben
+9:01 PM
+I'll let Chanel drink the water. Good idea. Let me get that on the books.
+Caller
+9:01 PM
+Thank you. I appreciate you taking point on scheduling that.
+cat
+9:01 PM
+And Beck, are you gonna be looking for a 60 minute time slot for that demo?
+Ben
+9:01 PM
+I think so, yeah. Yeah. Does this? Yeah, yeah.
+cat
+9:01 PM
+Yeah, I don't. I don't. It's not gonna fit in 30.
+Ben
+9:01 PM
+OK.
+Caller
+9:01 PM
+Um, Beck, do you you own this meeting? Can you add uh Nagesh? Um, as Prakhar was asking about to the.
+Ben
+9:01 PM
+Oh, sure.
+Caller
+9:01 PM
+Attendees, thank you.
+All right. I also need to drop. Thank you, everyone. I appreciate your time. Looking forward to getting moving on this Sprint. Talk to you all soon. Sorry, what's up, Prakhar? Oh, you were just waiting.
+Ben
+9:02 PM
+Right.
+Lead
+9:02 PM
+This wasn't that.
+Caller
+9:02 PM
+The hand raise motion is the same.
+cat
+9:02 PM
+Bye.
