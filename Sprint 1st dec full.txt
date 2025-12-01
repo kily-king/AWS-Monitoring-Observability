@@ -1,0 +1,776 @@
+Clements, Daniel (US)
+0 minutes 3 seconds0:03
+Clements, Daniel (US) 0 minutes 3 seconds
+Taking a swing at at all of that.
+Clements, Daniel (US) 0 minutes 6 seconds
+Aaron, where do you think we'll get you on the device observability? Um.
+Clements, Daniel (US) 0 minutes 13 seconds
+And this can be an open question broader than Kieran because I imagine I mean and all of them can be because I I don't know if it's one person like single tracking this work to be clear. So where where do we think we'll get on MVP device observability?
+
+Bysani, Kiran (C) (IN)
+0 minutes 28 seconds0:28
+Bysani, Kiran (C) (IN) 0 minutes 28 seconds
+Right now I I I got information that Philip Gagan is working on this event collector. I hope you are aware of Philip Gagan.
+0 minutes 41 seconds0:41
+0 minutes 41 seconds
+Mhm.
+
+Clements, Daniel (US)
+0 minutes 41 seconds0:41
+Clements, Daniel (US) 0 minutes 41 seconds
+We are, yes.
+
+Bysani, Kiran (C) (IN)
+0 minutes 42 seconds0:42
+Bysani, Kiran (C) (IN) 0 minutes 42 seconds
+Yeah, I'm going to, I'm trying. Yeah, I'm. I have to connect with him to get more more on information on that. So even I'm trying to connect with the people, the other guy who is like Suresh, he's working on the how he is going to monitor those alerts and all and he's where he's to work with the.
+FP
+
+Fitzenberger, Pat (C) (US)
+0 minutes 43 seconds0:43
+Fitzenberger, Pat (C) (US) 0 minutes 43 seconds
+Know him very well.
+
+Bysani, Kiran (C) (IN)
+1 minute 2 seconds1:02
+Bysani, Kiran (C) (IN) 1 minute 2 seconds
+Vendors to replace or any application issue he's he's working on it, so I'm connecting with them on to get more information on it.
+
+Clements, Daniel (US)
+1 minute 12 seconds1:12
+Clements, Daniel (US) 1 minute 12 seconds
+OK. So that's and that's really in the gathering requirements and current state assessment as an input to the target state. So it sounds like what what's like the period of time that you expect to to be working through that?
+Clements, Daniel (US) 1 minute 29 seconds
+Discovery piece.
+
+Bysani, Kiran (C) (IN)
+1 minute 29 seconds1:29
+Bysani, Kiran (C) (IN) 1 minute 29 seconds
+Yeah, yeah, I will. Yes, it is. So like, you know, it's a day late saving. I'm trying to connect Gawan now. I'll connect with him and I'll see how much information I can gather.
+
+Clements, Daniel (US)
+1 minute 43 seconds1:43
+Clements, Daniel (US) 1 minute 43 seconds
+So total time like is that, are you saying like like you're thinking a week? Are you like what's the period of that versus your target state design? I'm just trying to get an understanding of where you're estimating.
+
+Bysani, Kiran (C) (IN)
+1 minute 53 seconds1:53
+Bysani, Kiran (C) (IN) 1 minute 53 seconds
+No, no.
+Bysani, Kiran (C) (IN) 1 minute 55 seconds
+Yeah, OK. Like I'll, I'll, I'll be gathering this by next call.
+
+Clements, Daniel (US)
+2 minutes 5 seconds2:05
+Clements, Daniel (US) 2 minutes 5 seconds
+Oh, you're for the requirements gathering by next. I mean, I'm not, I'm not saying you have to commit to it in 24 hours. I'm just trying to get a sense for how far you like what what of these green epic tasks here, right? The of the pattern do you think you're going to accomplish by the end of this Sprint, which is 2 weeks from now?
+FP
+Fitzenberger, Pat (C) (US)
+2 minutes 5 seconds2:05
+Fitzenberger, Pat (C) (US) 2 minutes 5 seconds
+Um.
+
+Bysani, Kiran (C) (IN)
+2 minutes 15 seconds2:15
+Bysani, Kiran (C) (IN) 2 minutes 15 seconds
+This.
+Bysani, Kiran (C) (IN) 2 minutes 24 seconds
+That I'm not.
+
+Clements, Daniel (US)
+2 minutes 24 seconds2:24
+Clements, Daniel (US) 2 minutes 24 seconds
+No.
+
+Srivastava, Abhijeet Kumar (IN)
+2 minutes 26 seconds2:26
+Srivastava, Abhijeet Kumar (IN) 2 minutes 26 seconds
+Yeah, so I would like to bring a point here. So it for the this one it looks more into event collector application, right? So some of the section is lying on the right side and some of the sections are lying on the left side. So on the right side whatever the application is handling.
+Srivastava, Abhijeet Kumar (IN) 2 minutes 45 seconds
+We require someone who has got the experience on that part to handle those aspects. So whatever the on the left side like it is like communicating with the Azure IoT hub and how it is getting communicated and how those accesses can be migrated to AWS that we can do.
+Srivastava, Abhijeet Kumar (IN) 3 minutes 2 seconds
+But whatever it is communicating from the IoT hub to the application side, I think that part we need to assign it to somebody on the development.
+
+Clements, Daniel (US)
+3 minutes 10 seconds3:10
+Clements, Daniel (US) 3 minutes 10 seconds
+So the good news is you're only responsible for the right hand side as part of this pattern. So you don't really have to worry about the left hand side. But I'm not. I'm also not necessarily like saying you have to go finish it right now. I'm asking it sounds like you're starting to get your head wrapped around the problem. I'm I'm asking how long you think it's going to take.
+
+Srivastava, Abhijeet Kumar (IN)
+3 minutes 19 seconds3:19
+Srivastava, Abhijeet Kumar (IN) 3 minutes 19 seconds
+OK.
+
+Srivastava, Abhijeet Kumar (IN)
+3 minutes 19 seconds3:19
+Srivastava, Abhijeet Kumar (IN) 3 minutes 19 seconds
+OK.
+
+Clements, Daniel (US)
+3 minutes 30 seconds3:30
+Clements, Daniel (US) 3 minutes 30 seconds
+To go through that design process and then get to like, hey, I've got a target state that I want to align on and start moving towards. That's that's really the question here is is kind of a projection of where you think you'll be in two weeks and it doesn't have to be accurate necessarily, right? We just want to measure progress, so.
+
+Bysani, Kiran (C) (IN)
+3 minutes 31 seconds3:31
+Bysani, Kiran (C) (IN) 3 minutes 31 seconds
+Good.
+
+Clements, Daniel (US)
+3 minutes 51 seconds3:51
+Clements, Daniel (US) 3 minutes 51 seconds
+That's really what I'm what I'm asking for is just kind of putting a a line in the sand that we can measure against to figure out our pace.
+
+Bysani, Kiran (C) (IN)
+4 minutes4:00
+Bysani, Kiran (C) (IN) 4 minutes
+Yeah, yeah, you can take 1-2 weeks, so yeah.
+
+Dube, Prakhar (IN)
+4 minutes 6 seconds4:06
+Dube, Prakhar (IN) 4 minutes 6 seconds
+And just very, very small question just so that I clear about the expectation with device management MVP, we are not looking at IoT solution, right?
+
+Clements, Daniel (US)
+4 minutes 6 seconds4:06
+Clements, Daniel (US) 4 minutes 6 seconds
+OK, so.
+
+Bysani, Kiran (C) (IN)
+4 minutes 17 seconds4:17
+Bysani, Kiran (C) (IN) 4 minutes 17 seconds
+Yes.
+
+Clements, Daniel (US)
+4 minutes 18 seconds4:18
+Clements, Daniel (US) 4 minutes 18 seconds
+So this task here, device observability is really the operative word, right? This is not about the completely independent project where we're trying to change how we manage device interactions, which has to do with IoT, has to do with changing code on the devices, has to do with creating a whole new system.
+
+Dube, Prakhar (IN)
+4 minutes 31 seconds4:31
+Dube, Prakhar (IN) 4 minutes 31 seconds
+Mhm.
+
+Clements, Daniel (US)
+4 minutes 37 seconds4:37
+Clements, Daniel (US) 4 minutes 37 seconds
+System for interacting with the that's a different project. This is really just today in production we have.
+Clements, Daniel (US) 4 minutes 48 seconds
+A system that has been thrown together that consumes events from Kafka post event collector and that system renders information to our our observability the teams act on in production today.
+Clements, Daniel (US) 5 minutes 5 seconds
+This is only to.
+
+Dube, Prakhar (IN)
+5 minutes 6 seconds5:06
+Dube, Prakhar (IN) 5 minutes 6 seconds
+So ECECNCS Azure Event Hub to ODS.
+
+Clements, Daniel (US)
+5 minutes 11 seconds5:11
+Clements, Daniel (US) 5 minutes 11 seconds
+Yes.
+
+Dube, Prakhar (IN)
+5 minutes 11 seconds5:11
+Dube, Prakhar (IN) 5 minutes 11 seconds
+So instead of that flow to S3.
+
+Clements, Daniel (US)
+5 minutes 14 seconds5:14
+Clements, Daniel (US) 5 minutes 14 seconds
+So it's it's just, yeah, go ahead, Pat.
+FP
+Fitzenberger, Pat (C) (US)
+5 minutes 15 seconds5:15
+Fitzenberger, Pat (C) (US) 5 minutes 15 seconds
+No, so.
+
+Dube, Prakhar (IN)
+5 minutes 15 seconds5:15
+Dube, Prakhar (IN) 5 minutes 15 seconds
+No.
+FP
+Fitzenberger, Pat (C) (US)
+5 minutes 18 seconds5:18
+Fitzenberger, Pat (C) (US) 5 minutes 18 seconds
+So it.
+Fitzenberger, Pat (C) (US) 5 minutes 21 seconds
+There's two parts to these device communications. The event comes in to Event Collector. Event Collector receives it. It then puts that message into a Kinesis topic. There's then metadata that is added on to enrich that, but ultimately what we need to replace is.
+
+Dube, Prakhar (IN)
+5 minutes 26 seconds5:26
+Dube, Prakhar (IN) 5 minutes 26 seconds
+Right.
+FP
+Fitzenberger, Pat (C) (US)
+5 minutes 41 seconds5:41
+Fitzenberger, Pat (C) (US) 5 minutes 41 seconds
+Is the process that happens after event collector writes it into to Kafka right now today that then gets replicated.
+
+Dube, Prakhar (IN)
+5 minutes 50 seconds5:50
+Dube, Prakhar (IN) 5 minutes 50 seconds
+I'm sorry, you said Kinesis or Kafka or is it both?
+FP
+Fitzenberger, Pat (C) (US)
+5 minutes 53 seconds5:53
+Fitzenberger, Pat (C) (US) 5 minutes 53 seconds
+It's Kafka is what you're using. Kinesis is the the almost AWS equivalent on it that that could be used. Yeah, it is Kafka. So event collector receives it. It puts a message into to Kafka and then there.
+
+Dube, Prakhar (IN)
+6 minutes 1 second6:01
+Dube, Prakhar (IN) 6 minutes 1 second
+Well, I understand that right now it's Kafka, right?
+Dube, Prakhar (IN) 6 minutes 6 seconds
+OK.
+Dube, Prakhar (IN) 6 minutes 10 seconds
+Yes.
+FP
+Fitzenberger, Pat (C) (US)
+6 minutes 13 seconds6:13
+Fitzenberger, Pat (C) (US) 6 minutes 13 seconds
+There is a Mirror Maker instance that's then taking that message off of Kafka, reading off of those topics and then pushing it into Azure Event Hub I think. And then there's a bunch of SQL statements that then they're being used that goes through and looks at things like the the event code, the command code.
+
+Dube, Prakhar (IN)
+6 minutes 21 seconds6:21
+Dube, Prakhar (IN) 6 minutes 21 seconds
+Event Hub. Yes, yes.
+Dube, Prakhar (IN) 6 minutes 31 seconds
+Just.
+FP
+Fitzenberger, Pat (C) (US)
+6 minutes 32 seconds6:32
+Fitzenberger, Pat (C) (US) 6 minutes 32 seconds
+And the body and the payload of those and then is dispatching a notification via ServiceNow. We have to keep with ServiceNow because that's the way that the end of the field community knows to say, hey look, this device needs to be replaced, yes or no.
+
+Dube, Prakhar (IN)
+6 minutes 50 seconds6:50
+Dube, Prakhar (IN) 6 minutes 50 seconds
+Mm.
+FP
+Fitzenberger, Pat (C) (US)
+6 minutes 50 seconds6:50
+Fitzenberger, Pat (C) (US) 6 minutes 50 seconds
+So that is going to to not change, but the stuff that's in the middle after event collector writes into Kinesis and that message is being processed and evaluated, that's what needs to be replaced.
+
+Dube, Prakhar (IN)
+7 minutes 5 seconds7:05
+Dube, Prakhar (IN) 7 minutes 5 seconds
+Which means Azure Event Hub needs to be replaced. So whatever goes in Kafka we just we just send it through some Lambda or some function needs to run, check the validity, send it to ServiceNow and then dump the message to S3.
+FP
+Fitzenberger, Pat (C) (US)
+7 minutes 8 seconds7:08
+Fitzenberger, Pat (C) (US) 7 minutes 8 seconds
+Correct.
+
+Clements, Daniel (US)
+7 minutes 18 seconds7:18
+Clements, Daniel (US) 7 minutes 18 seconds
+Right. Possibly, right. And that's that's why there's a design story here, right? Like we should figure out exactly what the current state is there and then suggest a pattern, right? I whatever compute is appropriate, Lambda perhaps, right? But we need to consume those events and we need to get them to the appropriate consumers.
+FP
+Fitzenberger, Pat (C) (US)
+7 minutes 19 seconds7:19
+Fitzenberger, Pat (C) (US) 7 minutes 19 seconds
+Yep.
+
+Dube, Prakhar (IN)
+7 minutes 29 seconds7:29
+Dube, Prakhar (IN) 7 minutes 29 seconds
+Yeah.
+FP
+Fitzenberger, Pat (C) (US)
+7 minutes 35 seconds7:35
+Fitzenberger, Pat (C) (US) 7 minutes 35 seconds
+Correct.
+
+Clements, Daniel (US)
+7 minutes 35 seconds7:35
+Clements, Daniel (US) 7 minutes 35 seconds
+And we should consider, you know, whatever resiliency is baked into the process right now in terms of how we handle that. So it's it's really actually like not that huge of an ask. It's just that we need a way to get our current state like device observability mirrored in a WS.
+
+Dube, Prakhar (IN)
+7 minutes 39 seconds7:39
+Dube, Prakhar (IN) 7 minutes 39 seconds
+Yes.
+Dube, Prakhar (IN) 7 minutes 42 seconds
+Yes.
+Dube, Prakhar (IN) 7 minutes 47 seconds
+Yes.
+Dube, Prakhar (IN) 7 minutes 54 seconds
+Yes, so.
+
+Clements, Daniel (US)
+7 minutes 54 seconds7:54
+Clements, Daniel (US) 7 minutes 54 seconds
+The other stuff you were talking about with IoT and whatnot, that's like our our long term future redesign of how we do everything to do with devices.
+
+Dube, Prakhar (IN)
+7 minutes 59 seconds7:59
+Dube, Prakhar (IN) 7 minutes 59 seconds
+Yes, North Star. Got it, got it. So quick, quick question. So far with this MVP we would be duplicating the traffic, right? Azure Event Hub to ODS, but it'll also go to S3.
+FP
+Fitzenberger, Pat (C) (US)
+8 minutes 1 second8:01
+Fitzenberger, Pat (C) (US) 8 minutes 1 second
+Yep, Yep.
+
+Dube, Prakhar (IN)
+8 minutes 14 seconds8:14
+Dube, Prakhar (IN) 8 minutes 14 seconds
+I mean, we would be duplicating the the events, right? Yeah, not.
+
+Clements, Daniel (US)
+8 minutes 18 seconds8:18
+Clements, Daniel (US) 8 minutes 18 seconds
+I don't. I don't think there's any requirement with this story to dump anything to to S3 like adoption of the data lake pattern and how we like bring device events to that like that is that is a separate problem space. That's not not the ask here for the team. I I don't want to try to to solve 2 completely distinct problems at once.
+FP
+Fitzenberger, Pat (C) (US)
+8 minutes 18 seconds8:18
+Fitzenberger, Pat (C) (US) 8 minutes 18 seconds
+I wouldn't.
+Fitzenberger, Pat (C) (US) 8 minutes 32 seconds
+Correct.
+
+Clements, Daniel (US)
+8 minutes 37 seconds8:37
+Clements, Daniel (US) 8 minutes 37 seconds
+This is really to support like the tactical need for the field that our AWS solution has to to bridge a gap that um hasn't been solved for in the transformation pattern yet.
+FP
+Fitzenberger, Pat (C) (US)
+8 minutes 38 seconds8:38
+Fitzenberger, Pat (C) (US) 8 minutes 38 seconds
+Correct.
+
+Dube, Prakhar (IN)
+8 minutes 38 seconds8:38
+Dube, Prakhar (IN) 8 minutes 38 seconds
+OK.
+Dube, Prakhar (IN) 8 minutes 49 seconds
+So in simpler terms, can we just call it getting rid of Azure Event Hub?
+FP
+Fitzenberger, Pat (C) (US)
+8 minutes 54 seconds8:54
+Fitzenberger, Pat (C) (US) 8 minutes 54 seconds
+Yeah, yeah, yeah, yeah.
+
+Clements, Daniel (US)
+8 minutes 55 seconds8:55
+Clements, Daniel (US) 8 minutes 55 seconds
+Yeah, sure, sure.
+
+Dube, Prakhar (IN)
+8 minutes 57 seconds8:57
+Dube, Prakhar (IN) 8 minutes 57 seconds
+Yeah, I mean we are calling it a a very complex MVP on device monitoring. I mean we can just call it a replacement for Azure Event Hub.
+FP
+Fitzenberger, Pat (C) (US)
+9 minutes 5 seconds9:05
+Fitzenberger, Pat (C) (US) 9 minutes 5 seconds
+Yeah.
+
+Dube, Prakhar (IN)
+9 minutes 7 seconds9:07
+Dube, Prakhar (IN) 9 minutes 7 seconds
+I mean, in a nutshell, that's what we are doing, right? We are not changing over this.
+
+Clements, Daniel (US)
+9 minutes 9 seconds9:09
+Clements, Daniel (US) 9 minutes 9 seconds
+You can call it a pony as long as we agree on what needs to be done.
+
+Ramsey, David (US)
+9 minutes 14 seconds9:14
+Ramsey, David (US) 9 minutes 14 seconds
+I mean.
+
+Dube, Prakhar (IN)
+9 minutes 14 seconds9:14
+Dube, Prakhar (IN) 9 minutes 14 seconds
+I I mean we limit the, we limit the scope and and it's more understandable now like it's a single component that we are targeting in the complete story. When you talk about device monitoring, I start from device and I end at ODS, but actually it's just a single piece we are targeting.
+
+Clements, Daniel (US)
+9 minutes 21 seconds9:21
+Clements, Daniel (US) 9 minutes 21 seconds
+I.
+Clements, Daniel (US) 9 minutes 26 seconds
+I think.
+Clements, Daniel (US) 9 minutes 28 seconds
+I mean, the reason it's labeled as MVP device observability is that the problem is not replace Event Hub inherently, right? The problem is the field needs a means to observe the devices and react to them. So like, I'm trying to avoid prescriptive technology decisions in the way that I.
+FP
+Fitzenberger, Pat (C) (US)
+9 minutes 38 seconds9:38
+Fitzenberger, Pat (C) (US) 9 minutes 38 seconds
+Correct.
+
+Dube, Prakhar (IN)
+9 minutes 40 seconds9:40
+Dube, Prakhar (IN) 9 minutes 40 seconds
+Mhm.
+
+Clements, Daniel (US)
+9 minutes 46 seconds9:46
+Clements, Daniel (US) 9 minutes 46 seconds
+Capture what needs to be done, right? Like I don't want to jump to the solution by describing the problem.
+FP
+Fitzenberger, Pat (C) (US)
+9 minutes 52 seconds9:52
+Fitzenberger, Pat (C) (US) 9 minutes 52 seconds
+8.
+Fitzenberger, Pat (C) (US) 9 minutes 53 seconds
+I will also say is eventually the data does need to be dropped into the ODS, but I think we can separate those two. I think right now the critical path is is we need an analogous solution to take these events that are coming from a UMB system and we need to be able to dispatch.
+
+Srivastava, Abhijeet Kumar (IN)
+9 minutes 53 seconds9:53
+Srivastava, Abhijeet Kumar (IN) 9 minutes 53 seconds
+Yeah, OK, so far.
+
+Dube, Prakhar (IN)
+9 minutes 54 seconds9:54
+Dube, Prakhar (IN) 9 minutes 54 seconds
+Yeah.
+Dube, Prakhar (IN) 10 minutes 2 seconds
+Yeah.
+FP
+Fitzenberger, Pat (C) (US)
+10 minutes 13 seconds10:13
+Fitzenberger, Pat (C) (US) 10 minutes 13 seconds
+resources to be able to go out and remediate those. That's the critical link that I think we need you guys to charter and to figure a new pattern of how this is going to exist within the AWS world.
+
+Ramsey, David (US)
+10 minutes 27 seconds10:27
+Ramsey, David (US) 10 minutes 27 seconds
+Yeah, I mean, just to be super clear, right? We're talking about snow.
+
+Srivastava, Abhijeet Kumar (IN)
+10 minutes 29 seconds10:29
+Srivastava, Abhijeet Kumar (IN) 10 minutes 29 seconds
+Yeah, that. Oh, yeah.
+FP
+Fitzenberger, Pat (C) (US)
+10 minutes 32 seconds10:32
+Fitzenberger, Pat (C) (US) 10 minutes 32 seconds
+Yes.
+
+Ramsey, David (US)
+10 minutes 32 seconds10:32
+Ramsey, David (US) 10 minutes 32 seconds
+Like I just to be hyper specific, there is a set of logic that comes off of that Kafka stream, does some stuff.
+
+Clements, Daniel (US)
+10 minutes 33 seconds10:33
+Clements, Daniel (US) 10 minutes 33 seconds
+Yeah, great.
+
+Ramsey, David (US)
+10 minutes 42 seconds10:42
+Ramsey, David (US) 10 minutes 42 seconds
+Integrates to Snow. That stuff lies in Azure with Phil Gagnon SQL logic that needs moved to something a WS specific and then.
+
+Dube, Prakhar (IN)
+10 minutes 54 seconds10:54
+Dube, Prakhar (IN) 10 minutes 54 seconds
+Simple. Thanks a lot.
+
+Ramsey, David (US)
+10 minutes 56 seconds10:56
+Ramsey, David (US) 10 minutes 56 seconds
+Separately, I believe that same stream is being moved to Pat's point through to ODS. I believe in today's world, I think. Don't quote me, this is NiFi.
+FP
+Fitzenberger, Pat (C) (US)
+11 minutes 11 seconds11:11
+Fitzenberger, Pat (C) (US) 11 minutes 11 seconds
+Yeah.
+
+Ramsey, David (US)
+11 minutes 11 seconds11:11
+Ramsey, David (US) 11 minutes 11 seconds
+That also needs replaced, so the data's still going to get hit Kafka. We need to fix those two problems.
+
+Clements, Daniel (US)
+11 minutes 21 seconds11:21
+Clements, Daniel (US) 11 minutes 21 seconds
+So for the and then for the 95 bit like you, we are still landing that data in the in the ODS to be clear like it's just to support current state as is right now, yeah.
+FP
+Fitzenberger, Pat (C) (US)
+11 minutes 29 seconds11:29
+Fitzenberger, Pat (C) (US) 11 minutes 29 seconds
+Yeah.
+
+Ramsey, David (US)
+11 minutes 30 seconds11:30
+Ramsey, David (US) 11 minutes 30 seconds
+Right, exactly. Yeah, yeah. A staging table to be super hyper specific, right? Like.
+FP
+Fitzenberger, Pat (C) (US)
+11 minutes 33 seconds11:33
+Fitzenberger, Pat (C) (US) 11 minutes 33 seconds
+Yeah.
+Fitzenberger, Pat (C) (US) 11 minutes 35 seconds
+Yeah, yeah.
+
+Srivastava, Abhijeet Kumar (IN)
+11 minutes 40 seconds11:40
+Srivastava, Abhijeet Kumar (IN) 11 minutes 40 seconds
+Yes, sure. And just to add like there is push from the DMS service as well. So for example is if there is a like firmware upgrade or anything update with which is record on the devices that is also getting pushed to the.
+
+Ramsey, David (US)
+11 minutes 54 seconds11:54
+Ramsey, David (US) 11 minutes 54 seconds
+So Abhijeet, that's where I think this and this is getting confusing because I think you're expanding the scope. Put all that stuff aside. That's a separate problem to Daniel's point in a separate room. Right now there's a set of data that's going to land in a Kafka topic.
+Ramsey, David (US) 12 minutes 12 seconds
+We need that Kafka topic in an Azure world splits into two spots. It goes to snow and ODS.
+Ramsey, David (US) 12 minutes 21 seconds
+The way in which either of those happen both break when we move to AWS. We got to fix those two problems, period. Hard stop. Like how the data gets to Kafka right now you can think of as black magic. We're going to solve that problem somewhere else. Just assume it's in Kafka. We have to consume it and then go do something with it.
+
+Srivastava, Abhijeet Kumar (IN)
+12 minutes 41 seconds12:41
+Srivastava, Abhijeet Kumar (IN) 12 minutes 41 seconds
+Still got it good.
+
+Clements, Daniel (US)
+12 minutes 50 seconds12:50
+Clements, Daniel (US) 12 minutes 50 seconds
+I'm gonna call it that to be a little bit maybe maybe that solves the the need that you were looking for Prakhar so.
+Clements, Daniel (US) 13 minutes 1 second
+That's what I expect to see is the output of this gathering requirements and current state assessment, right? Like, first of all, like, I want to make sure we're really clear on what the problem is and what Phil is doing right now. What's that sequel? Like what are the kinds of things that we need to get to snow? How does, how does it get there today?
+Clements, Daniel (US) 13 minutes 18 seconds
+Target state is everything that Dave just said, right? What are our technology selections that are going to solve that problem and render the data to the right place?
+Clements, Daniel (US) 13 minutes 30 seconds
+I was really hoping we would be able to kick off the Sprint today with an amount of work that that we think we can confidently achieve in the next two weeks. Feels like we're a little short of information, or at least estimation.
+Clements, Daniel (US) 13 minutes 43 seconds
+Let's circle back to this device monitoring one. I wanna talk about account provisioning. It looks like Abhijeet, you were grooming these. What? What are your expectations around these? What do we think you're going to achieve?
+
+Srivastava, Abhijeet Kumar (IN)
+14 minutes14:00
+Srivastava, Abhijeet Kumar (IN) 14 minutes
+The requirement capability section on the first part of the deployment is steps I can proceed on the next coming week.
+Srivastava, Abhijeet Kumar (IN) 14 minutes 10 seconds
+This week.
+
+Clements, Daniel (US)
+14 minutes 10 seconds14:10
+Clements, Daniel (US) 14 minutes 10 seconds
+OK. So you think it sounds like you're going to, you're doing both of these in the current Sprint, right? The next two weeks, is that what you were suggesting? Sorry if I misunderstood.
+
+Srivastava, Abhijeet Kumar (IN)
+14 minutes 22 seconds14:22
+Srivastava, Abhijeet Kumar (IN) 14 minutes 22 seconds
+Yeah, yeah, sure.
+
+Clements, Daniel (US)
+14 minutes 28 seconds14:28
+Clements, Daniel (US) 14 minutes 28 seconds
+OK, I'm going to tentatively start this Sprint with.
+Clements, Daniel (US) 14 minutes 34 seconds
+The items that are in it right now.
+Clements, Daniel (US) 14 minutes 41 seconds
+And.
+Clements, Daniel (US) 14 minutes 43 seconds
+It sounds like we committed to key cloaks design and implementation, but not the testing for observability.
+Clements, Daniel (US) 14 minutes 53 seconds
+It sounds like we committed to.
+Clements, Daniel (US) 14 minutes 56 seconds
+Design and for environment provisioning, we think that this is going to be completely done. That's that's our expectation for the next two weeks. Does that seem reasonable to everyone?
+
+Bysani, Kiran (C) (IN)
+15 minutes 10 seconds15:10
+Bysani, Kiran (C) (IN) 15 minutes 10 seconds
+Yeah, yeah, it would.
+
+Batchu, Praveen (IN)
+15 minutes 15 seconds15:15
+Batchu, Praveen (IN) 15 minutes 15 seconds
+Yes, yeah, yeah.
+
+Clements, Daniel (US)
+15 minutes 15 seconds15:15
+Clements, Daniel (US) 15 minutes 15 seconds
+All right. Now I want to go ahead and do some. Are you, are you guys going to continue working in the tracks of the people that estimated those? I think there's more of you than there are tracks here. So do we want to talk about assignment of this work? Who's tackling it or do you want to handle that internally?
+Clements, Daniel (US) 15 minutes 42 seconds
+I'll let you guys continue as is on that, but I I'll be following up in the next one then. Is there anything else we want to get through in this session today?
+
+Batchu, Praveen (IN)
+15 minutes 48 seconds15:48
+Batchu, Praveen (IN) 15 minutes 48 seconds
+Yeah.
+
+Dube, Prakhar (IN)
+15 minutes 56 seconds15:56
+Dube, Prakhar (IN) 15 minutes 56 seconds
+Yes, I just have a couple of point. One request is we can possibly add Nageshwara also to this call. They also have their task defined and they also started working from today.
+Dube, Prakhar (IN) 16 minutes 11 seconds
+So we might also add their respective task in this Sprint, so they'll be doing the code migration from Bitbucket to GitHub.
+
+Clements, Daniel (US)
+16 minutes 21 seconds16:21
+Clements, Daniel (US) 16 minutes 21 seconds
+OK, yeah. Do you do you know what board those are on? I I I can bring them in as another print, another Sprint under platform. I just don't know where they put them. I I talked to Nagesh about that last week. See if I can.
+
+Dube, Prakhar (IN)
+16 minutes 27 seconds16:27
+Dube, Prakhar (IN) 16 minutes 27 seconds
+Is it?
+Dube, Prakhar (IN) 16 minutes 37 seconds
+I guess it's the same board.
+Dube, Prakhar (IN) 16 minutes 40 seconds
+But yeah, I can ask him again. I I happened to saw the stories in the same board.
+Dube, Prakhar (IN) 16 minutes 52 seconds
+So that is one. And second question is about understanding the business object modeling is on a different board altogether. So are we tracking it somewhere else?
+
+Clements, Daniel (US)
+17 minutes 2 seconds17:02
+Clements, Daniel (US) 17 minutes 2 seconds
+What? What is on somewhere else?
+
+Dube, Prakhar (IN)
+17 minutes 4 seconds17:04
+Dube, Prakhar (IN) 17 minutes 4 seconds
+The business object modeling story.
+
+Clements, Daniel (US)
+17 minutes 7 seconds17:07
+Clements, Daniel (US) 17 minutes 7 seconds
+I'm moving those to this board. When I created the backlog for Abhijeet and Shirisha there, this board didn't exist yet, so I'm I'm moving it over probably today and I'll they'll be informed.
+
+Srivastava, Abhijeet Kumar (IN)
+17 minutes 8 seconds17:08
+Srivastava, Abhijeet Kumar (IN) 17 minutes 8 seconds
+So cool.
+
+Dube, Prakhar (IN)
+17 minutes 21 seconds17:21
+Dube, Prakhar (IN) 17 minutes 21 seconds
+Amazing. Yep, that's all. Thank you.
+
+Clements, Daniel (US)
+17 minutes 30 seconds17:30
+Clements, Daniel (US) 17 minutes 30 seconds
+All right, we've got an active Sprint then. So happy, happy sprinting everyone.
+FP
+Fitzenberger, Pat (C) (US)
+17 minutes 39 seconds17:39
+Fitzenberger, Pat (C) (US) 17 minutes 39 seconds
+So now that we kicked off a Sprint, when are we targeting this end? Are we going to try and get on a rhythm and a cadence? Are we just going to do 2 weeks from today? How do we want to to to manage that?
+
+Clements, Daniel (US)
+17 minutes 55 seconds17:55
+Clements, Daniel (US) 17 minutes 55 seconds
+It's a great question. I was thinking it would be good for us to schedule.
+Clements, Daniel (US) 18 minutes 1 second
+Maybe a a demo of some kind whether it's halfway through or at the end or both. I would I would love to be able to see that because I I think with this one halfway through would be good cause there's a lot of design stuff. We can also do that ad hoc in these check-ins.
+FP
+Fitzenberger, Pat (C) (US)
+18 minutes 16 seconds18:16
+Fitzenberger, Pat (C) (US) 18 minutes 16 seconds
+Correct.
+Fitzenberger, Pat (C) (US) 18 minutes 19 seconds
+Yeah.
+
+Clements, Daniel (US)
+18 minutes 19 seconds18:19
+Clements, Daniel (US) 18 minutes 19 seconds
+Um, going forward. Um.
+Clements, Daniel (US) 18 minutes 24 seconds
+See.
+FP
+Fitzenberger, Pat (C) (US)
+18 minutes 27 seconds18:27
+Fitzenberger, Pat (C) (US) 18 minutes 27 seconds
+So our Sprint date is one through the 15th. So today is is is day one of Sprint one. Is that a fair assessment?
+
+Clements, Daniel (US)
+18 minutes 38 seconds18:38
+Clements, Daniel (US) 18 minutes 38 seconds
+That's right.
+FP
+Fitzenberger, Pat (C) (US)
+18 minutes 41 seconds18:41
+Fitzenberger, Pat (C) (US) 18 minutes 41 seconds
+And then I I very much agree. I think we do need a a midweek Sprint, especially with the requirements. We can kind of go through each of the requirements that you guys have collected. We can talk about what what the design that you guys are looking at in in that same session.
+Fitzenberger, Pat (C) (US) 18 minutes 57 seconds
+But I would rather do that on a weekly basis rather than a biweekly, just to make sure that we are in alignment.
+Fitzenberger, Pat (C) (US) 19 minutes 6 seconds
+Tell you guys really good.
+
+Clements, Daniel (US)
+19 minutes 8 seconds19:08
+Clements, Daniel (US) 19 minutes 8 seconds
+Maybe Friday we we do a mid sprint touch point here and then.
+Clements, Daniel (US) 19 minutes 16 seconds
+The following Friday.
+Clements, Daniel (US) 19 minutes 20 seconds
+Is not only an off Friday for cubic, but I'll also be at a wedding in Mexico. Um. But I think others can can uh be at the helm for that one. Um.
+Clements, Daniel (US) 19 minutes 33 seconds
+Does that, yeah.
+FP
+Fitzenberger, Pat (C) (US)
+19 minutes 34 seconds19:34
+Fitzenberger, Pat (C) (US) 19 minutes 34 seconds
+OK, so.
+BM
+Beck, Matthew (C) (US)
+19 minutes 35 seconds19:35
+Beck, Matthew (C) (US) 19 minutes 35 seconds
+You want to try to do this Thursday night US time or, I'm sorry, Thursday morning US time, because Friday morning our time ends up being very late for these guys. Yeah, yeah.
+FP
+Fitzenberger, Pat (C) (US)
+19 minutes 36 seconds19:36
+Fitzenberger, Pat (C) (US) 19 minutes 36 seconds
+I'm in alone.
+Fitzenberger, Pat (C) (US) 19 minutes 44 seconds
+Friday night, third time.
+Fitzenberger, Pat (C) (US) 19 minutes 46 seconds
+Your time.
+
+Clements, Daniel (US)
+19 minutes 49 seconds19:49
+Clements, Daniel (US) 19 minutes 49 seconds
+Yeah.
+
+Beck, Matthew (C) (US)
+19 minutes 51 seconds19:51
+Beck, Matthew (C) (US) 19 minutes 51 seconds
+I'll let Chanel drink the water. Good idea. Let me get that on the books.
+
+Clements, Daniel (US)
+19 minutes 57 seconds19:57
+Clements, Daniel (US) 19 minutes 57 seconds
+Thank you. I appreciate you taking point on scheduling that.
+FP
+Fitzenberger, Pat (C) (US)
+20 minutes 2 seconds20:02
+Fitzenberger, Pat (C) (US) 20 minutes 2 seconds
+And Beck, are you gonna be looking for a 60 minute time slot for that demo?
+BM
+Beck, Matthew (C) (US)
+20 minutes 6 seconds20:06
+Beck, Matthew (C) (US) 20 minutes 6 seconds
+I think so, yeah. Yeah. Does this? Yeah, yeah.
+FP
+Fitzenberger, Pat (C) (US)
+20 minutes 7 seconds20:07
+Fitzenberger, Pat (C) (US) 20 minutes 7 seconds
+Yeah, I don't. I don't. It's not gonna fit in 30.
+BM
+Beck, Matthew (C) (US)
+20 minutes 14 seconds20:14
+Beck, Matthew (C) (US) 20 minutes 14 seconds
+OK.
+
+Clements, Daniel (US)
+20 minutes 15 seconds20:15
+Clements, Daniel (US) 20 minutes 15 seconds
+Um, Beck, do you you own this meeting? Can you add uh Nagesh? Um, as Prakhar was asking about to the.
+BM
+Beck, Matthew (C) (US)
+20 minutes 23 seconds20:23
+Beck, Matthew (C) (US) 20 minutes 23 seconds
+Oh, sure.
+
+Clements, Daniel (US)
+20 minutes 25 seconds20:25
+Clements, Daniel (US) 20 minutes 25 seconds
+Attendees, thank you.
+Clements, Daniel (US) 20 minutes 46 seconds
+All right. I also need to drop. Thank you, everyone. I appreciate your time. Looking forward to getting moving on this Sprint. Talk to you all soon. Sorry, what's up, Prakhar? Oh, you were just waiting.
+
