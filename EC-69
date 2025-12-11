@@ -1,0 +1,27 @@
+This project demonstrates how to query streaming data from Kafka using several Azure technologies:
+
+Kafka Mirror Maker
+Azure Event Hubs
+Azure Stream Analytics
+Azure Logic Apps
+Service Now Integration
+Workflow:
+
+Generator App sents message to Kafka or Event Hubs
+Stream Analytics will aggregate and filter messages into a second Event Hubs
+Logic App will read events and create a ticket in Service Now
+
+
+
+
+
+Today EC is reading from Kafka, but the reporting is all done via Azure Event Hub. This all needs to change to a new pattern that is not tightly coupled to Azure services, while also being mindful of the value this data has within the system. IT Ops needs to see these device events to ensure that work is being done before a device failure. ODS also need to make use of this data for reporting. 
+
+MVP:
+
+Replicate the logic that occurs in Event Hub into an AWS pattern to land SQL based insights into Service Now
+Replace Apache NiFi to land device events/heartbeat data in current state as-is to ODS staging tables
+Post go-live: Need to figure out what we're doing long term with the functionality that Solar Winds provides today
+
+
+
