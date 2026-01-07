@@ -562,3 +562,380 @@ Vending machines generate multiple categories of events:
 * DR and multi-region strategy
 * Rollout and migration plan
 
+
+
+#  Perfect — below is a **precise, Confluence-ready version** of your page with **clear inclusion of the OLD Azure flow and the rationale for moving to AWS**, written so that **any new reader immediately understands *why* this new architecture exists**.
+
+I have:
+
+* **Kept your content intact**
+* **Inserted two well-placed sections**:
+
+  1. *Legacy Architecture (Azure) – Current Pain Points*
+  2. *Why We Are Moving to AWS – Architectural Rationale*
+* Kept it **concise, factual, and review-safe**
+* Avoided marketing language
+
+You can **paste this directly into Confluence**.
+
+---
+
+# **Solution Design – Vending Machine Telemetry, Observability & Incident Management**
+
+---
+
+## Purpose of This Document
+
+This document describes the **end-to-end design** of the Vending Machine Telemetry, Observability, and Incident Management platform.
+
+It explains:
+
+* **How data flows**
+* **Why each AWS service is used**
+* **How incidents are detected and acted upon**
+* **Why the legacy Azure-based architecture is being replaced**
+
+The design is based on the **approved target-state architecture**.
+
+### Intended Audience
+
+* Architecture & platform teams
+* Operations & NOC teams
+* Security & compliance reviewers
+* Engineers onboarding to the platform
+
+---
+
+## Background – Legacy Architecture (Azure)
+
+Before introducing the new AWS-based architecture, the platform relied on the following **Azure-centric flow**:
+
+### Legacy Event Flow (Azure)
+
+```
+Vending Machines
+ → Event Collector (On-Premises)
+ → Kafka (Self-Managed)
+ → MirrorMaker (Single Instance, No HA)
+ → Azure Event Hubs
+ → Azure Stream Analytics
+ → Azure Logic Apps
+ → ServiceNow
+```
+
+---
+
+## Limitations of the Legacy Architecture
+
+### 1. Operational Fragility
+
+* Kafka MirrorMaker was **not highly available**
+* Any failure in MirrorMaker caused:
+
+  * Event backlog
+  * Data loss risk
+  * Manual recovery efforts
+
+---
+
+### 2. Tight Coupling Between Analytics and ITSM
+
+* Azure Stream Analytics and Logic Apps were directly tied to ServiceNow
+* Failures or throttling in ServiceNow impacted upstream processing
+* No proper buffering or retry isolation
+
+---
+
+### 3. Limited Scalability and Control
+
+* Event Hubs introduced an additional streaming layer without clear ownership
+* Scaling decisions were constrained by service limits
+* Hard to tune latency and throughput end-to-end
+
+---
+
+### 4. Weak Failure Isolation
+
+* Logic Apps handled both:
+
+  * Business logic
+  * External system orchestration
+* No strong separation between:
+
+  * Detection
+  * Notification
+  * Incident creation
+
+---
+
+### 5. Observability Gaps
+
+* Logs and metrics were fragmented across:
+
+  * On-prem systems
+  * Azure services
+* No unified operational view for:
+
+  * Pipeline health
+  * Alert latency
+  * End-to-end event flow
+
+---
+
+## Why We Are Moving to AWS (Design Rationale)
+
+The new AWS architecture addresses these issues by applying **clear architectural principles**.
+
+### Key Drivers for Change
+
+| Problem in Legacy Flow       | How AWS Architecture Fixes It  |
+| ---------------------------- | ------------------------------ |
+| Non-HA MirrorMaker           | Fully managed Kafka (MSK)      |
+| Tight coupling to ServiceNow | EventBridge + Lambda isolation |
+| Multiple streaming systems   | Single Kafka backbone          |
+| Fragile orchestration        | SQS + controlled retries       |
+| Limited observability        | CloudWatch + Grafana           |
+| Hard to replay/audit         | S3 + Iceberg                   |
+
+---
+
+### Architectural Principles Adopted
+
+* **Event-driven, not workflow-driven**
+* **Loose coupling between analytics and ITSM**
+* **Managed services over self-managed**
+* **Clear separation of responsibilities**
+* **Audit-ready data retention**
+* **Failure isolation by design**
+
+---
+
+## High-Level Flow Overview (End-to-End)
+
+> *LucidChart diagram is embedded here*
+
+Each layer is **loosely coupled** and can scale or fail independently.
+
+---
+
+## High-Level Architecture Overview
+
+1. Edge Layer – Vending machines generate telemetry
+2. Ingestion Layer – Secure, normalized event intake
+3. Streaming Backbone – Durable event transport
+4. Stream Processing – Real-time analytics and incident detection
+5. Alerting & Orchestration – Controlled delivery to ITSM
+6. Storage & Analytics – Long-term and analytical data storage
+7. Observability – Logs, metrics, dashboards
+
+Each layer has a **single responsibility**, reducing coupling and operational risk.
+
+---
+
+## 1. Edge Layer – Device Event Sources
+
+### Services / Components
+
+* **Vending Machines (IoT / Smart Devices)**
+
+### What happens here
+
+Vending machines generate:
+
+* Machine health telemetry
+* Transactions and sales
+* Inventory and refill events
+* Errors and fault alarms
+* Security and tamper events
+* Firmware and configuration updates
+* Location and connectivity data
+* Logs and diagnostics (smart machines)
+
+### Why this layer exists
+
+* Represents the **source of truth**
+* No analytics or decisions at device level
+* Keeps devices simple and lightweight
+
+---
+
+## 2. Ingestion Layer – Controlled Event Intake
+
+### Services
+
+* **Event Collector Application**
+* **Amazon EKS**
+
+### Responsibilities
+
+* Secure device authentication
+* Schema validation and normalization
+* Metadata enrichment
+* Controlled ingress into the platform
+
+📌 **Key principle:**
+
+> Devices never talk directly to Kafka.
+
+---
+
+## 3. Storage Layer – System of Record
+
+### 3.1 Amazon MSK (Kafka Cluster)
+
+* Central event backbone
+* Durable, ordered, replayable
+* Decouples producers and consumers
+
+---
+
+### 3.2 Amazon S3 – Raw Zone (Iceberg)
+
+* Immutable raw events
+* Long-term retention
+* Audit and replay capability
+
+---
+
+## 4. Real-Time Stream Processing
+
+### Service
+
+* **AWS Glue Streaming Job**
+
+### Responsibilities
+
+* Consume Kafka events
+* Lightweight transformations
+* Incident identification
+* Emit business-level signals
+
+---
+
+## 5. Business Event Routing
+
+### Service
+
+* **Amazon EventBridge**
+
+### Responsibilities
+
+* Business event bus
+* Rule-based routing
+* Fan-out and retries
+* DLQ support
+
+---
+
+## 6. Operational Alerting & Orchestration
+
+### AWS Lambda
+
+* Business rules
+* Deduplication
+* Rate limiting
+* Controlled retries
+
+### Amazon SQS (DLQ)
+
+* Buffers failures
+* Guarantees durability
+* Smooths traffic spikes
+
+---
+
+## 7. IT Service Management
+
+### Service
+
+* **ServiceNow**
+
+* Incident creation and updates
+
+* Asset correlation
+
+* SLA tracking
+
+* Audit trail
+
+---
+
+## 8. Optional State Management
+
+### Amazon DynamoDB
+
+* Device last-seen
+* Incident references
+* Deduplication keys
+* Alert lifecycle state
+
+---
+
+## 9. Batch Processing & Analytics
+
+* AWS Glue (Batch ETL)
+* Glue Data Catalog
+* Amazon S3 (Analytics – Iceberg)
+
+---
+
+## 10. Querying & Reporting
+
+* AWS Athena
+* Power BI
+
+---
+
+## 11. Observability & Monitoring
+
+### CloudWatch Logs
+
+Centralized logs from EKS, MSK, Glue, Lambda, SQS
+
+### CloudWatch Metrics
+
+Latency, throughput, error rates
+
+### Amazon Managed Grafana
+
+Operational dashboards and NOC visibility
+
+---
+
+## 12. Security & Secrets Management
+
+* AWS Secrets Manager
+* IAM (least privilege)
+* Encryption at rest and in transit
+
+---
+
+## 13. Failure Handling & Resilience
+
+* Kafka absorbs spikes
+* Glue Streaming handles backpressure
+* EventBridge retries and DLQs
+* Lambda isolates ServiceNow failures
+* SQS buffers traffic
+* DynamoDB ensures idempotency
+
+---
+
+## 14. Key Design Principles
+
+* Event-driven
+* Loose coupling
+* Managed services
+* Single responsibility
+* Audit-ready
+* Scalable by design
+
+---
+
+## 15. Open Items (Next Phase)
+
+* SLIs and SLOs
+* Cost optimization
+* DR and multi-region strategy
+* Rollout and migration plan
+
