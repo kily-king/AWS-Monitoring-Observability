@@ -230,29 +230,21 @@ This page is intended for:
 
 ## 2. High-Level Flow Overview (End-to-End)
 
-**Simple flow (for orientation):**
-
-```
-Vending Machines
- → Event Collector (EKS)
- → Amazon MSK (Kafka)
- → AWS Glue Streaming Job
- → Amazon EventBridge
- → AWS Lambda
- → ServiceNow
-
-Parallel paths:
- → S3 (Raw & Analytics – Iceberg)
- → Glue Batch ETL
- → Athena / Power BI
-
-Observability:
- → CloudWatch Logs & Metrics
- → Grafana
-```
+" Here i will paste the LucidChart Diagram "
 
 Each layer is **loosely coupled** and can scale or fail independently.
 
+# High-Level Architecture Overview
+1. The solution follows an event-driven, layered architecture:
+2. Edge Layer – Vending machines generate telemetry
+3. Ingestion Layer – Secure, normalized event intake
+4. Streaming Backbone – Durable event transport
+5. Stream Processing – Real-time analytics and incident detection
+6. Alerting & Orchestration – Controlled delivery to ITSM
+7. Storage & Analytics – Long-term and analytical data storage
+8. Observability – Logs, metrics, dashboards
+
+Each layer has a single responsibility, reducing coupling and operational risk.
 ---
 
 ## 3. Edge Layer – Device Event Sources
