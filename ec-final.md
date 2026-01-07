@@ -1,6 +1,3 @@
-
-
-.
 Device & Hardware Telemetry (Machine Health)
 - Collected to ensure the machine is alive, healthy and operational.
 Examples
@@ -205,3 +202,371 @@ Amazon SQS
 Amazon DynamoDB (Optional State Store)
 • Device last-seen  • Open incident tracking  • Deduplication  • ServiceNow incident reference mapping  • Last alert timestamp 
 • Alert state lifecycle (open → update → resolved)  • Severity history for incident updates
+
+
+
+
+
+
+# Confulence 
+
+# 🧩 Solution Design – Vending Machine Telemetry, Observability & Incident Management
+
+---
+
+## 1. Purpose of This Document
+
+This document describes the **end-to-end design** of the Vending Machine Telemetry and Incident Management platform.
+It explains **how data flows**, **why each AWS service is used**, and **how incidents are detected and acted upon**, based on the **approved architecture diagram**.
+
+This page is intended for:
+
+* Architecture & platform teams
+* Operations & NOC teams
+* Security & compliance reviewers
+* New engineers onboarding to the platform
+
+---
+
+## 2. High-Level Flow Overview (End-to-End)
+
+**Simple flow (for orientation):**
+
+```
+Vending Machines
+ → Event Collector (EKS)
+ → Amazon MSK (Kafka)
+ → AWS Glue Streaming Job
+ → Amazon EventBridge
+ → AWS Lambda
+ → ServiceNow
+
+Parallel paths:
+ → S3 (Raw & Analytics – Iceberg)
+ → Glue Batch ETL
+ → Athena / Power BI
+
+Observability:
+ → CloudWatch Logs & Metrics
+ → Grafana
+```
+
+Each layer is **loosely coupled** and can scale or fail independently.
+
+---
+
+## 3. Edge Layer – Device Event Sources
+
+### Services / Components
+
+* **Vending Machines (IoT / Smart Devices)**
+
+### What happens here
+
+Vending machines generate multiple categories of events:
+
+* Machine health (heartbeat, temperature, power)
+* Transactions and sales
+* Inventory and refill status
+* Errors, faults, and alarms
+* Security and tamper events
+* Firmware and configuration updates
+* Location and connectivity data
+* Logs and diagnostics (smart machines)
+
+### Why this layer exists
+
+* Represents the **source of truth** from the physical world
+* No analytics or decisions are made at the device level
+* Keeps devices simple and lightweight
+
+---
+
+## 4. Ingestion Layer – Controlled Event Intake
+
+### Services
+
+* **Event Collector Application**
+* **Amazon EKS**
+
+### Responsibilities
+
+* Secure device authentication
+* Schema validation and normalization
+* Metadata enrichment (device ID, timestamps, site)
+* Controlled ingress into the cloud platform
+
+### Why EKS is used
+
+* Supports scalable ingestion workloads
+* Enables rolling upgrades and isolation
+* Avoids exposing Kafka directly to devices
+
+📌 **Key principle:**
+
+> Devices never talk directly to Kafka.
+
+---
+
+## 5. Storage Layer – System of Record
+
+### 5.1 Amazon MSK (Kafka Cluster)
+
+**Role**
+
+* Central event backbone
+* Durable, ordered, replayable event storage
+* Decouples producers and consumers
+
+**Why MSK**
+
+* Handles high-volume, bursty device traffic
+* Allows multiple downstream consumers
+* Supports reprocessing after failures or logic changes
+
+---
+
+### 5.2 Amazon S3 – Raw Zone (Iceberg)
+
+**Role**
+
+* Immutable storage of raw device events
+* Long-term retention for audit and replay
+
+**Why Iceberg**
+
+* Schema evolution
+* Time-travel queries
+* Works natively with Athena and Glue
+
+---
+
+## 6. Real-Time Stream Processing
+
+### Service
+
+* **AWS Glue Streaming Job**
+
+### Responsibilities
+
+* Consume events from Kafka
+* Perform lightweight stream transformations
+* Identify incident conditions (rules, thresholds, patterns)
+* Emit **business-level incident events**
+
+### Why Glue Streaming
+
+* Fully managed streaming ETL
+* No cluster management
+* Suitable for near-real-time detection (seconds to minutes)
+
+📌 This is where **raw telemetry becomes operational signals**.
+
+---
+
+## 7. Business Event Routing
+
+### Service
+
+* **Amazon EventBridge**
+
+### Responsibilities
+
+* Acts as the **business event bus**
+* Rule-based routing of incident events
+* Fan-out to downstream consumers
+* Built-in retry and DLQ support
+
+### Why EventBridge
+
+* Decouples detection from action
+* Enables future integrations without refactoring
+* Supports governance and auditability
+
+---
+
+## 8. Operational Alerting & Orchestration
+
+### 8.1 AWS Lambda – Incident Orchestration
+
+**Responsibilities**
+
+* Apply business rules
+* Deduplicate alerts
+* Rate-limit ServiceNow API calls
+* Handle retries and transient failures
+* Ensure controlled incident creation
+
+📌 Lambda does **not** perform analytics.
+
+---
+
+### 8.2 Amazon SQS – Dead Letter Queue
+
+**Role**
+
+* Buffers failed or delayed alert events
+* Smooths traffic spikes
+* Guarantees message durability
+* Enables safe retries without data loss
+
+---
+
+## 9. IT Service Management
+
+### Service
+
+* **ServiceNow (Incident & Asset APIs)**
+
+### Responsibilities
+
+* Create and update incidents
+* Correlate alerts with device assets
+* Track incident lifecycle and SLAs
+* Provide audit and compliance trail
+* Drive human remediation workflows
+
+📌 ServiceNow is the **system of action**, not analytics.
+
+---
+
+## 10. Optional State Management
+
+### Service
+
+* **Amazon DynamoDB**
+
+### What it stores
+
+* Device last-seen timestamps
+* Open incident references
+* Deduplication keys
+* Alert lifecycle state
+* Severity history
+
+### Why it’s optional
+
+* Used only when idempotency and replay safety are required
+* Keeps orchestration reliable during retries
+
+---
+
+## 11. Batch Processing & Analytics
+
+### Services
+
+* **AWS Glue (Batch ETL)**
+* **AWS Glue Data Catalog**
+* **Amazon S3 – Analytics Zone (Iceberg)**
+
+### Responsibilities
+
+* Cleanse and enrich historical data
+* Manage schema evolution
+* Prepare analytics-ready datasets
+
+---
+
+## 12. Querying & Reporting
+
+### Services
+
+* **AWS Athena**
+* **Power BI**
+
+### What this enables
+
+* Ad-hoc SQL analytics
+* Incident history analysis
+* Device last-seen reporting
+* SLA and trend reporting
+* Cost-efficient, serverless analytics
+
+---
+
+## 13. Observability & Monitoring
+
+### 13.1 CloudWatch Logs
+
+* Centralized logs from:
+
+  * EKS
+  * MSK
+  * Glue
+  * Lambda
+  * SQS
+* Used for debugging and audits
+
+---
+
+### 13.2 Amazon S3 – Centralized Log Archive
+
+* Long-term log retention
+* Compliance and forensic analysis
+* Source for Athena queries
+
+---
+
+### 13.3 CloudWatch Metrics
+
+* Ingestion rate and latency
+* Error and retry counts
+* Pipeline health monitoring
+
+---
+
+### 13.4 Amazon Managed Grafana
+
+* Visualizes CloudWatch metrics
+* Real-time operational dashboards
+* Single pane of glass for NOC teams
+
+---
+
+## 14. Security & Secrets Management
+
+### Services
+
+* **AWS Secrets Manager**
+* **IAM**
+* **Encryption (in transit & at rest)**
+
+### Key controls
+
+* Device authentication at ingestion
+* Least-privilege IAM roles
+* Centralized secret storage
+* Immutable audit data
+
+---
+
+## 15. Failure Handling & Resilience (Summary)
+
+* Kafka absorbs ingestion spikes
+* Glue Streaming handles backpressure
+* EventBridge retries and DLQs
+* Lambda isolates ServiceNow failures
+* SQS buffers traffic spikes
+* DynamoDB ensures idempotency
+* No direct dependency between analytics and ITSM
+
+---
+
+## 16. Key Design Principles
+
+* Event-driven
+* Loose coupling
+* Single responsibility per service
+* Managed services over self-managed
+* Audit and compliance ready
+* Scalable by design
+
+---
+
+## 17. Open Items (Next Phase)
+
+* SLIs and SLO definitions
+* Cost optimization thresholds
+* DR and multi-region strategy
+* Rollout and migration plan
+
