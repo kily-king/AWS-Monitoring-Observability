@@ -1,0 +1,624 @@
+Interviewer
+you can carry on with your introduction.
+SG
+
+Candidate
+1 minute 9 seconds1:09
+Candidate 1 minute 9 seconds
+Yep, sure. Like hi, hi Kiran. Like I am Sandeep Yadav Gurla. I'm from a small town which is Potharam located in Bijenge Mandal Siddipet district in Telangana state. So coming to my education, I have completed my Bachelor of Technology from Molarity College of Engineering and Technology with an aggregate of 9.1 CG.
+Candidate 1 minute 29 seconds
+GPA like specialized in electronics and communication engineering and this is about my education and coming to my professional career. Like soon after my graduation I started my professional career at WS Audiology which is nothing but a product based medical hearing aid manufacture company with the headquarters located in Germany and as well as.
+Candidate 1 minute 49 seconds
+Singapore. So the company was created by in 2019 by merger of Siva Anderson as well as Verdix. These two are the products that we're gonna produce in terms of medical hearing aids devices to the customers.
+Candidate 2 minutes 4 seconds
+In WS Audiology it is a company with 12,500 plays a product based company with the main motto is bring back human potential by by making wonderful sound part of everyone's life. So that's where WS Audiology in a nutshell it is called as Wonderful Sound for all and again it is brand specifically like Videxignia.
+Candidate 2 minutes 24 seconds
+Audiology and this is about my professional experience where career where I started soon after my graduation and coming to the main thing like the tools and technology that I've been expertise working at WS Audiology. I told close to three years of experience in working as a DevOps engineer at WS Audiology.
+Candidate 2 minutes 44 seconds
+In building, automation, testing and releasing the code from one environment and another environment and also deploying it to service. Like I do have answer experience working with the projects called Fit XP which is nothing but a fitting software used by hearing care professional which in the sense for our hearing care profession of the doctors who gonna make who gonna make the first fit to the customers, customers in the sense.
+Candidate 3 minutes 4 seconds
+The patience and also I'm having a hands on experience working for Fit XP in automating the stuff using PowerShell and Shell and I've been using for the projects which is nothing but Fit XP as well as an assistant in maintaining and as well as conferring Azure DevOps pipeline.
+Candidate 3 minutes 23 seconds
+And I do hold hands on experience in containerizing the application for as well as next Gen. Sony next Sony Gen. 3 which is nothing but the branding will be Sony but the back end whole process would be given by the Audiology in using Docker and also creating Docker images and pushing it to ACR from there again deploying.
+Candidate 3 minutes 43 seconds
+So Kubernetes cluster like I'm highly experienced in JL methodologies and also iterative development process which in the sense currently we follow like a small example like I've been working for the projects called Fatexp which is part of business to business B2B and then again I've been also part of taking.
+Candidate 4 minutes 2 seconds
+Care of next Gen. which was a POC back then a year ago, but currently it is being implemented and consumed by them two to three apps. Next Gen. is nothing but it is a it is built with LLMS and GPT 2.0, which is in a small nutshell we can tell.
+Candidate 4 minutes 21 seconds
+For example, when we are trying to order something from Zomato for a, we faced a known issues that a third person or a contact person who's never in need, but obviously we can give the help of AI. So here also with the help of HCPS solutions.
+Candidate 4 minutes 40 seconds
+We designed in such a way that if any of the issues were found by the end customer or inpatient, then he can make his next fit soon after the first fit. So this is about like my short introduction of education as well as professional experience.
+
+Interviewer
+4 minutes 58 seconds4:58
+Interviewer 4 minutes 58 seconds
+When did you finish your graduate?
+SG
+
+Candidate
+5 minutes 1 second5:01
+Candidate 5 minutes 1 second
+2023 April.
+
+Interviewer
+5 minutes 4 seconds5:04
+Interviewer 5 minutes 4 seconds
+OK. So I just noticed like, you know, it's hardly, you mentioned three years, it's not.
+SG
+Candidate
+5 minutes 10 seconds5:10
+Candidate 5 minutes 10 seconds
+Yes, yes closed. But while I was in 4/2 I was internship for this product based company. So then again soon after completing my 4 two I directly joined the company.
+
+Interviewer
+5 minutes 14 seconds5:14
+Interviewer 5 minutes 14 seconds
+Yeah, OK, not a problem. Yes. Mm-hmm.
+Interviewer 5 minutes 18 seconds
+Mm-hmm.
+Interviewer 5 minutes 25 seconds
+OK, OK.
+SG
+Candidate
+5 minutes 26 seconds5:26
+Candidate 5 minutes 26 seconds
+As AFT, so that's where.
+
+Interviewer
+5 minutes 29 seconds5:29
+Interviewer 5 minutes 29 seconds
+OK, just a question. Not a not a problem.
+SG
+Candidate
+5 minutes 32 seconds5:32
+Candidate 5 minutes 32 seconds
+Uh, yes, yes.
+
+Interviewer
+5 minutes 34 seconds5:34
+Interviewer 5 minutes 34 seconds
+Oh.
+Interviewer 5 minutes 37 seconds
+OK, So what was that new PowerShell that you were doing? Like you know what are the things that you were using this PowerShell into your real time work environment?
+SG
+Candidate
+5 minutes 49 seconds5:49
+Candidate 5 minutes 49 seconds
+So currently at starting we we've been automating all the stuff using PowerShell and also for the one feature or I would say that is a requirement where we use the PowerShell most is migrating all the Fit XPM packages into its own repository. So we have closely identified Microsoft.
+
+
+
+Interviewer
+8 minutes 43 seconds8:43
+Interviewer 8 minutes 43 seconds
+Mhm.
+SG
+Candidate
+8 minutes 54 seconds8:54
+Candidate 8 minutes 54 seconds
+At the time I joined, I'm the 4th or 6th guy in Hyderabad, but back then it used to be operator R&D only from Germany and Denmark and a bit of from Singapore, but then moved to Hyderabad. Now it is a close to 150 plus head count and support kind of stuff. We don't take care.
+
+Interviewer
+9 minutes 2 seconds9:02
+Interviewer 9 minutes 2 seconds
+OK.
+Interviewer 9 minutes 8 seconds
+OK.
+SG
+Candidate
+9 minutes 12 seconds9:12
+Candidate 9 minutes 12 seconds
+But it's being handled by Siemen and even I couldn't say they are also from support guys, they will be taking care of features from the refinement and as well as they will be working on that. But again a bit of support kind like granting the access to a particular resources using.
+Candidate 9 minutes 31 seconds
+Pim access those were minimalistic stuff they will do like.
+
+Interviewer
+9 minutes 37 seconds9:37
+Interviewer 9 minutes 37 seconds
+OK, OK. So you have I noticed that you have mentioned that you know you are into your profile seems to be more into Azure and I see like you know you have mentioned AWS and GCP too. What was the role of?
+SG
+Candidate
+9 minutes 47 seconds9:47
+Candidate 9 minutes 47 seconds
+Yes.
+
+Interviewer
+9 minutes 53 seconds9:53
+Interviewer 9 minutes 53 seconds
+Are you playing into AWS and GCP? How did you get a chance on working on it or how it is?
+SG
+Candidate
+10 minutes10:00
+Candidate 10 minutes
+So I got a opportunity on Sony. So back then Sony was at Sony was not to our project because previously it used to take care of by another company but soon after Sony.
+Candidate 10 minutes 15 seconds
+Gen. 2 was hand over to WS Audiology, so we used to look into the architecture that was designed completely in AWS. So the deployment was in EKS clusters and as well as they used to store, they used to use S3 bucket and also a few of the stuff.
+Candidate 10 minutes 33 seconds
+So at that time in order to make sure that each and every stuff to be aligned with the single architecture so that everything everything will be at the same place. So I got a opportunity to mode all this Sony next by the time Sony Gen. 2 we used to deploy all our.
+Candidate 10 minutes 50 seconds
+Code into E case only in the sense AWS, but as a part of Gen. 3 there was a requirement where we need to move all the all the infra part and all the deployment to be to be deployed over Azure Kubernetes services because.
+Candidate 11 minutes 6 seconds
+Because we need to make use of this next Gen. Next Gen. is nothing but a which is a chatbot kind of back end services to be consumed by Sony. So that's the issue because right from POC it is deployed in Azure Kubernetes services. So I got a opportunity to look into EKS as well, the service deployed in AWS, but then again we moved to.
+Candidate 11 minutes 25 seconds
+I should native all the stuff like coming to storage in order to make sure that Terraform state file is being pushed, but back then it was using S3 bucket. So that's the opportunity I got to look into more and I took a bit of challenging also.
+
+Interviewer
+11 minutes 28 seconds11:28
+Interviewer 11 minutes 28 seconds
+OK.
+Interviewer 11 minutes 36 seconds
+OK, what? What were the challenge? What were the challenges you noticed or you had while migration from AWS to Azure?
+SG
+Candidate
+11 minutes 48 seconds11:48
+Candidate 11 minutes 48 seconds
+So in the beginning it was a bit of headache for us because we need to make sure that this service should be should be up and running without underlying the dependencies from the Amazon to make sure that it is a what do we say a code specific. So at that point of time we had a refinement where we could.
+Candidate 12 minutes 8 seconds
+Make sure that this this transmission should go in a smoother way so that none of our teams could be affected. So in the beginning we thought to deploy it to Azure Azure App Service and in that starting time so that to make sure that it's running by it should be run in the beginning but.
+Candidate 12 minutes 28 seconds
+Then again there was a requirement from the architecture team. No, we don't want to make this particular application should be running in somewhere else other than Kubernetes because rest of all the services is being run in Kubernetes cluster. So even I have completed a POC as well, make sure that it is.
+
+Interviewer
+12 minutes 37 seconds12:37
+Interviewer 12 minutes 37 seconds
+Yes.
+SG
+Candidate
+12 minutes 45 seconds12:45
+Candidate 12 minutes 45 seconds
+That it is already run into Azure App Service but all of a sudden the the requirement was changed and it took me I think for us a team of six members. It took me 2 spins to plan how to make make sure that should be it should be up and running and then changing the.
+Candidate 13 minutes 4 seconds
+To the particular service and we didn't create it directly pushed to a main branch, but we used Sony Gen. 3A feature branch, so make sure and recently I think after a month.
+Candidate 13 minutes 20 seconds
+The this PR we merged our particular chance into main and now it is working fine. Then again there were so many stuff that we need to take it. See we didn't create a YAML files for the release pipeline because it should be a one go. So that's the challenge and.
+Candidate 13 minutes 36 seconds
+And regarding the access like back then we used to maintain the PM access for the prod and as well as stage. But the developers used to ask more and more they should be change, they should be like portfolio or make sure that the API should be up and running in the particular environment. Then at that point of time we was in so much busy and make sure that.
+Candidate 13 minutes 56 seconds
+It is done by using more number of refinement and catch-ups, but then we know we need to upload their PIM access as well to make sure the deployment won't fail in release. Then if it fails then we I used to deploy the previously.
+Candidate 14 minutes 11 seconds
+Succeeded build I took from Azure DevOps and again deploying it to prod. So it was a bit of challenging stuff that went on for two months.
+
+Interviewer
+14 minutes 17 seconds14:17
+Interviewer 14 minutes 17 seconds
+OK, OK.
+Interviewer 14 minutes 21 seconds
+OK.
+Interviewer 14 minutes 23 seconds
+OK, so when you mentioned like you know scripting languages like Bash, Shell and Python, So what do you find the differences between those different tools which you are using and?
+SG
+Candidate
+14 minutes 31 seconds14:31
+Candidate 14 minutes 31 seconds
+Yes.
+
+Interviewer
+14 minutes 38 seconds14:38
+Interviewer 14 minutes 38 seconds
+Where did you use different tools? In which scenarios?
+SG
+Candidate
+14 minutes 43 seconds14:43
+Candidate 14 minutes 43 seconds
+So basically currently we are using PowerShell. So as part of my finding this PowerShell is more of Microsoft like Azure native and the one thing that I liked in this PowerShell because we used to maintain paste test as well.
+
+Interviewer
+14 minutes 46 seconds14:46
+Interviewer 14 minutes 46 seconds
+Mm-hmm.
+Interviewer 14 minutes 53 seconds
+Mhm.
+
+
+Candidate 16 minutes 55 seconds
+Python like a minimalistic for Sony next Gen. I have seen which was done by another company like we took over after a while so I didn't get much of opportunity but we just replicated that whole stuff into converted into PowerShell.
+Candidate 17 minutes 13 seconds
+But for replication also like we followed our architecture community of practices.
+
+Interviewer
+17 minutes 20 seconds17:20
+Interviewer 17 minutes 20 seconds
+Mhm.
+Interviewer 17 minutes 21 seconds
+OK, so you have been mentioning that you have worked on different CICD tools like Jenkins, GitHub actions and other things. So what all the areas that I know you have been using it?
+SG
+Candidate
+17 minutes 32 seconds17:32
+Candidate 17 minutes 32 seconds
+Yes.
+Candidate 17 minutes 36 seconds
+So regarding Jenkins, it's being used for Sony next Gen. R3. So there while deploying it to EKS they used to automate with the help of Jenkin pipeline and then again coming to after migrating currently we are using Azure DevOps pipeline for a whole list of like for building and as well as.
+Candidate 17 minutes 56 seconds
+Pushing to ACR right from there and as well as deploying it to workload even now also we do have pipelines. So basically our architecture has four layers which in a sense a global, regional and environment as well as a workload. So when it comes to whenever if it takes piece hit by by URL is hit by the end user then it will route.
+Candidate 18 minutes 16 seconds
+To Azure Front Door from there to regional routing service which is built by net then comes the environment. So for the particular environment we have divided into client specific so each of the client can deploy the changes and check other than pre prod and stage. So for this part as well we have created a pipeline which is nothing but a deployed.
+Candidate 18 minutes 36 seconds
+Environment pipeline. So most of these needs approvals. We have set approval gates as well. Only PO can be allowed. Only technical PO can be allowed to create environment that can be used by the particular team so that the environment won't be consumed by another team in order to make sure that the changes were done.
+Candidate 18 minutes 53 seconds
+And then in CICD the only one challenge I would say.
+Candidate 19 minutes 3 seconds
+Oh, what is this?
+
+Interviewer
+19 minutes 5 seconds19:05
+Interviewer 19 minutes 5 seconds
+Yeah, tell me.
+SG
+Candidate
+19 minutes 7 seconds19:07
+Candidate 19 minutes 7 seconds
+Sorry, OK I I I got a notification so that's where I checking. So in the one challenge that I that we faced while migrating the only stuff is we need to make sure that this build pipeline should be moved to only single repository because as.
+Candidate 19 minutes 27 seconds
+Mentioned uh we have a project of it XP that is being a single monolithic uh architecture where the 18 microservices were set in only single repo and will be run based on the dependence depends on condition. So at one point uh we used to make sure that.
+Candidate 19 minutes 44 seconds
+The master fittex we for release by for pipelines. Also we used to have we have category categorized into two areas. One is individual CACD pipeline then another one is manual CACD pipeline. This individual CACD pipeline should be tested only by the SRA team that goes to production and this manual CACD.
+Candidate 20 minutes 4 seconds
+Pipeline should be tested by the the client specific teams. So the guys whomever joined later because they didn't find anything difference in these two lack of KT also I would say by those particular teams dev team so they they began to.
+Candidate 20 minutes 23 seconds
+Ran this particular fit XP individual CICD because at that point of time we used to get a notification in our teams channel like so and so pipeline was green. I'm sure that the game green checks we won't recheck again and again. But if any of the pipeline fails because of some external conditions or the code or the changes they made then that would be blocked for the next release so that.
+Candidate 20 minutes 43 seconds
+That's why at that point of time we make sure that we removed external feature brands to be run from the individual CICD pipeline, restricting only after PR merge that it runs so.
+
+Interviewer
+20 minutes 57 seconds20:57
+Interviewer 20 minutes 57 seconds
+OK.
+SG
+Candidate
+20 minutes 58 seconds20:58
+Candidate 20 minutes 58 seconds
+This is the experience with the like deploying stuff.
+
+Interviewer
+21 minutes 3 seconds21:03
+Interviewer 21 minutes 3 seconds
+OK, so how how about Docker and Kubernetes? What was like, you know, how did you write the? Did you ever write what the Docker file or how did you go on to, I mean Kubernetes part? What was your role in playing Kubernetes orchestration?
+SG
+Candidate
+21 minutes 23 seconds21:23
+Candidate 21 minutes 23 seconds
+So basically uh this next Gen. next Gen. assistant back then was POC. So because for fit XP and as well as Sony the Docker files were already written but the next Gen. Uh as as it was soon after it it got approval from the POC.
+Candidate 21 minutes 38 seconds
+So we began to write a ACR, so Docker images and push to ACR as well and the thing that I got while writing the Docker file. So I just wrapped inside a particular Docker file and pushed to Azure Container registry. From there Azure Container registry it is being deployed in Kubernetes.
+Candidate 21 minutes 58 seconds
+Cluster because we only have one single namespace. As we know it is a logical separation that we used to separate the services that is running in the Kubernetes cluster. We we only have default namespace that is that ran. So at that point of time soon after this particular image got deployed.
+Candidate 22 minutes 18 seconds
+We go to critical vulnerabilities issues so that's the first time that I saw like this docker image also should be scanned just like other the just like we do for the code with sonar quality get check. So I found it a package trivi then I I installed in my local then I.
+Candidate 22 minutes 38 seconds
+You.
+Candidate 22 minutes 38 seconds
+Checked this particular built Docker image from the ACR. I pulled the particular image which caused vulnerability and then again I used to scan in my local. So I used to fix the vulnerability for supposed Docknet runtime should be fixed by using 9.0.11. Recently I got back then we used to have 98.0.21.
+Candidate 22 minutes 58 seconds
+So I update, I used to update and I used to again rescan in my local, then push to the particular ACR so that the vulnerability Docker images should not go in production environment.
+Candidate 23 minutes 9 seconds
+And like this is a how like I've been a part of maintaining deployment of.
+
+Interviewer
+23 minutes 14 seconds23:14
+Interviewer 23 minutes 14 seconds
+No.
+Interviewer 23 minutes 17 seconds
+If there's been a new service that OK if there is a new service that in coming in someone plan to do it requested to do have a service which has to run on in a server server or how do you decide how do you?
+SG
+Candidate
+23 minutes 28 seconds23:28
+Candidate 23 minutes 28 seconds
+OK.
+Candidate 23 minutes 33 seconds
+OK.
+
+Interviewer
+23 minutes 36 seconds23:36
+Interviewer 23 minutes 36 seconds
+Calculate or decide whether it has to go onto a VM virtual machine if it is in the cloud environment or into a container sort of thing.
+SG
+Candidate
+23 minutes 48 seconds23:48
+Candidate 23 minutes 48 seconds
+So basically yes. So when whenever a particular guy comes to me and ask this particular service I should deploying into cloud, first of all I I'll make sure that what are the requirements that particular.
+
+Interviewer
+23 minutes 49 seconds23:49
+Interviewer 23 minutes 49 seconds
+On what basis? Yeah.
+
+Candidate
+24 minutes 3 seconds24:03
+Candidate 24 minutes 3 seconds
+The particular change that goes in the service goes into like any of the cloud. For example, they want this particular code. Their service should be run at a particular some sort of trigger. So I can give you some example to make sure that you understand for example.
+Candidate 24 minutes 21 seconds
+When a he designed a code that should send a welcome e-mail to a particular new user who logs into the application or to the environment. Then there isn't any point of isn't any point suggesting that particular code should be deployed in Azure Virtual Machine or Kubernetes cluster.
+Candidate 24 minutes 37 seconds
+It's just a serverless function. We can define an Azure serverless Azure function. We can set it a trigger in Azure function for a when when a new user logs in then make sure that he that it code runs to make sure that it sends an welcome e-mail. Then it's shut downs and goes to sleep mode so that we can efficiently use the.
+Candidate 24 minutes 57 seconds
+Resources not to make sure like deploying this particular small change into Kubernetes cluster that makes no sense in using those using those services that goes to cost. We should obviously we need to make sure that it should be cost effective.
+Candidate 25 minutes 16 seconds
+So this is the areas which I learned from working at WS only because this is the example that I got to know like one of a member from client reached out to us regarding they need a VM to make sure that they're send a code of sending a welcome e-mail to HCPS ENK professional whomever joins the company then we suggested this.
+Candidate 25 minutes 35 seconds
+Fun.
+
+Interviewer
+25 minutes 37 seconds25:37
+Interviewer 25 minutes 37 seconds
+OK.
+SG
+Candidate
+25 minutes 38 seconds25:38
+Candidate 25 minutes 38 seconds
+One minute.
+
+Interviewer
+25 minutes 39 seconds25:39
+Interviewer 25 minutes 39 seconds
+How about how about Isaac?
+SG
+Candidate
+25 minutes 44 seconds25:44
+Candidate 25 minutes 44 seconds
+One minute, Pamba.
+
+Interviewer
+25 minutes 46 seconds25:46
+Interviewer 25 minutes 46 seconds
+Yeah.
+SG
+Candidate
+25 minutes 55 seconds25:55
+Candidate 25 minutes 55 seconds
+Sorry, I was at my hometown. Someone came neighbor child.
+
+Interviewer
+25 minutes 59 seconds25:59
+Interviewer 25 minutes 59 seconds
+OK, no problem. Not a problem. Yeah, yeah. How about the infrastructure as a code?
+SG
+Candidate
+26 minutes 2 seconds26:02
+Candidate 26 minutes 2 seconds
+Yep.
+Candidate 26 minutes 7 seconds
+So currently we are using Bicep as a ISA code for the services which we deployed in cloud and we do have a Terraform for managing the branch policies for the Azure DevOps.
+
+Interviewer
+26 minutes 20 seconds26:20
+Interviewer 26 minutes 20 seconds
+What do you mean by branch policies?
+SG
+Candidate
+26 minutes 23 seconds26:23
+Candidate 26 minutes 23 seconds
+So basically branch policies, it is a policies which we set which we set a particular repository who needs to approve whether the changes are made from the feature branch and what are the teams, what are the ADO related IDs or teams can approve and how many number of required reviewer should how many number of.
+Candidate 26 minutes 43 seconds
+Reviewer should required in order to make sure that the changes should be in the master branch and also we can set a optional reviewer as well. Who are the teams that is optionally they can they are not they they get notified but their approval is not at all. The review is not at all mandatory. They can if they need or somewhere.
+Candidate 27 minutes 2 seconds
+And also this other stuff it involves in branch policies.
+Candidate 27 minutes 7 seconds
+Policies.
+
+Interviewer
+27 minutes 9 seconds27:09
+Interviewer 27 minutes 9 seconds
+OK, so when you say how it is related to Terraform?
+SG
+Candidate
+27 minutes 10 seconds27:10
+Candidate 27 minutes 10 seconds
+And PR pipeline also.
+Candidate 27 minutes 14 seconds
+So we deployed all this by using a Terraform because it can set manually. It can set by using a piece of like infrastructure as a code. So that's where we have written a a Terraform files for this particular one. And we do have a pipeline which is nothing but a deploy branch policies.
+Candidate 27 minutes 35 seconds
+So that's where we are using. I don't know the reason why they're specifically using Terraform for this particular branch policies because rest of other stuff we're using by using in Azure. So that's where we are using Azure native language like basic for deploying our infrastructure.
+
+Interviewer
+27 minutes 52 seconds27:52
+Interviewer 27 minutes 52 seconds
+OK, so where did you use Ansible?
+SG
+Candidate
+27 minutes 57 seconds27:57
+Candidate 27 minutes 57 seconds
+Currently, uh, we're not using Ansible one minute.
+Candidate 28 minutes 9 seconds
+Sorry to note you because they were calling they're small kids so that's why they're not understanding. Literally sorry. So regarding like Ansible, it's being used for Sony which which was previously it was used to take care.
+
+Interviewer
+28 minutes 11 seconds28:11
+Interviewer 28 minutes 11 seconds
+No, no problem.
+Interviewer 28 minutes 17 seconds
+OK, no.
+
+
+Interviewer
+28 minutes 40 seconds28:40
+Interviewer 28 minutes 40 seconds
+No, that's what the Ansible. Anything that you notice that the purpose of that Ansible that has been used in some use cases.
+SG
+Candidate
+28 minutes 49 seconds28:49
+Candidate 28 minutes 49 seconds
+So specifically I didn't like it was a long time I checked but not in a real real real time that I could remember. I believe I just checked that it it it used in previous project.
+
+Interviewer
+29 minutes 4 seconds29:04
+Interviewer 29 minutes 4 seconds
+No. So that's what see that you know when you are not you you don't have much idea on it. If you mention there would be questions on it, OK.
+SG
+Candidate
+29 minutes 6 seconds29:06
+Candidate 29 minutes 6 seconds
+Yeah.
+Candidate 29 minutes 14 seconds
+Yeah, actually I I checked that particular part, but because of the use case we didn't, we didn't use because the time that Sony comes into our our area, then Ansible, yeah.
+
+Interviewer
+29 minutes 26 seconds29:26
+Interviewer 29 minutes 26 seconds
+You.
+Interviewer 29 minutes 28 seconds
+Yeah, I I understood. See that's secondary, but in general see the all questions would be on process specific rate. So when in the project when you mention if I feel like I need a Ansible, who who knows Ansible then obviously.
+SG
+Candidate
+29 minutes 32 seconds29:32
+Candidate 29 minutes 32 seconds
+Yes.
+Candidate 29 minutes 37 seconds
+Yes, yes.
+
+Interviewer
+29 minutes 46 seconds29:46
+Interviewer 29 minutes 46 seconds
+What all you told so far when you the mentioned one is not what answered, then what all you told so far would go on win.
+Interviewer 29 minutes 58 seconds
+It would be a false statement also, at least to some extent. You should be prepared to answer it when you mention it in your resume. Got it.
+SG
+Candidate
+29 minutes 59 seconds29:59
+Candidate 29 minutes 59 seconds
+Yeah.
+Candidate 30 minutes
+Yes, yes.
+Candidate 30 minutes 8 seconds
+Yeah, sure. I'll, I'll rectify it. I'll take it as a good point.
+
+Interviewer
+30 minutes 13 seconds30:13
+Interviewer 30 minutes 13 seconds
+No, no. See. Yeah, at least one use case should be there when you have it in your resume. At least one.
+SG
+Candidate
+30 minutes 19 seconds30:19
+Candidate 30 minutes 19 seconds
+Yes, yes, true.
+
+Interviewer
+30 minutes 23 seconds30:23
+Interviewer 30 minutes 23 seconds
+Right. OK, so how about Argo CD? Where have you been using it and?
+SG
+Candidate
+30 minutes 28 seconds30:28
+Candidate 30 minutes 28 seconds
+So currently we use Argo CD for fit XP where we are using all our deployment should be should be from that Argo CD. So we used to check a particular deployment that get reflected in Argo CD and as well as we use a GitOps also in order to make sure each and every deployment should be written in a piece of code so that.
+Candidate 30 minutes 48 seconds
+What?
+Candidate 30 minutes 48 seconds
+Change it is in a cluster. It should be reflected in a Git repository. So for example if I want to make sure I created a workload with SA3 Sandeep 3 then then I could check in a two ways either in Arco CD the health status of the particular cluster and as well as in a Git repository set that that it should be created with.
+Candidate 31 minutes 8 seconds
+Say three in the in a particular piece of workload or environment. So this is how they can even I I or something developer can even check their particular changes in in a piece of code for Git as Git repository in GitOps in a master branch directly it creates.
+Candidate 31 minutes 26 seconds
+Simple. If I delete a particular workload, then the particular changes will be overridden and deleted.
+Candidate 31 minutes 32 seconds
+And our long goal is to make sure that Arco CD and GitOp should be implemented for each and every minute. Sorry, I wouldn't say minute. For example, a particular back end service is being consumed by two or three apps. This deployment process also should be using GitOps.
+
+Interviewer
+31 minutes 32 seconds31:32
+Interviewer 31 minutes 32 seconds
+OK.
+SG
+Candidate
+31 minutes 47 seconds31:47
+Candidate 31 minutes 47 seconds
+We shouldn't neglect, we didn't shouldn't look over the particular Microsoft it is only using by this apps so that I can implement directly in app level and forget about this particular service level. So a long goal is to make sure that it is also implemented in each and every service.
+Candidate 32 minutes 5 seconds
+True, it would be a bit of cost effective, but that's the heads up we received from architecture team.
+
+Interviewer
+32 minutes 14 seconds32:14
+Interviewer 32 minutes 14 seconds
+OK, so how how good you are at the Linux?
+SG
+Candidate
+32 minutes 19 seconds32:19
+Candidate 32 minutes 19 seconds
+So Linux like right from beginning we are using for three of the stuff in order to make sure our deployment stuff in testing local for any of the Kubernetes deployment we do check in our local the deployment status.
+Candidate 32 minutes 38 seconds
+True, we rely on Argo City, but again we used to check the deployments in our local by using CLI, Cube CTF and checking if anything goes wrong. Also we use Linux commands in day-to-day. I wouldn't say day-to-day, but once in a while we'll be using.
+
+Interviewer
+32 minutes 52 seconds32:52
+Interviewer 32 minutes 52 seconds
+So if how do you check if some service is not working?
+Interviewer 32 minutes 59 seconds
+Any Linux server?
+SG
+Candidate
+32 minutes 59 seconds32:59
+Candidate 32 minutes 59 seconds
+So we can just Linux server which you can just check the status by using a ping command whether the particular server is working.
+
+Interviewer
+33 minutes 1 second33:01
+Interviewer 33 minutes 1 second
+Yeah.
+Interviewer 33 minutes 7 seconds
+Service. I'm asking about the service.
+
+Candidate
+33 minutes 10 seconds33:10
+Candidate 33 minutes 10 seconds
+So that is being deployed in any of the Kubernetes.
+
+Interviewer
+33 minutes 15 seconds33:15
+Interviewer 33 minutes 15 seconds
+No if if there is a server, there is a server. So if it is a Linux server or Ubuntu whatever you can say Red Hat or Ubuntu CentOS whatever. So if there is an Sonar cube running in on it or any any other service that is running Jenkins, how do you check?
+SG
+Candidate
+33 minutes 19 seconds33:19
+Candidate 33 minutes 19 seconds
+Mm.
+Candidate 33 minutes 23 seconds
+Any of liberties?
+Candidate 33 minutes 30 seconds
+OK.
+
+Interviewer
+33 minutes 35 seconds33:35
+Interviewer 33 minutes 35 seconds
+The service of it.
+SG
+Candidate
+33 minutes 38 seconds33:38
+Candidate 33 minutes 38 seconds
+So I I didn't uh like got a opportunity to uh to work on this uh till now like.
+
+Interviewer
+33 minutes 47 seconds33:47
+Interviewer 33 minutes 47 seconds
+OK.
+SG
+Candidate
+33 minutes 48 seconds33:48
+Candidate 33 minutes 48 seconds
+Checking in Linux like basically L status we we because we deploy in Kubernetes cluster. So we used to check either from our local like if we are not have access to the particular environment then we used to raise a PIN for this particular ask. Then we used to check the logs like kubectl get logs.
+Candidate 34 minutes 8 seconds
+For the hyphen pod for the particular, we used to give the pod or if it is a having another namespace, we used to get also we used to check in the particular namespace. So and even for Fetext we used to check in Git OPS as well.
+
+Interviewer
+34 minutes 24 seconds34:24
+Interviewer 34 minutes 24 seconds
+OK.
+Interviewer 34 minutes 28 seconds
+One second.
+Interviewer 34 minutes 44 seconds
+Yeah.
+Interviewer 34 minutes 47 seconds
+Do you have any questions for me? I'm done. Do you have any questions for me?
+SG
+Candidate
+34 minutes 52 seconds34:52
+Candidate 34 minutes 52 seconds
+Like like I currently I do whole. I'm working for a product based company so with I got a vast opportunities to pitch in each of the service like NGA, Fit XP, B2C, Sony, B2B, Fit XP and underlying services next Gen. So what are the curve area or?
+Candidate 35 minutes 11 seconds
+Uh, the area that would be helpful for my growth.
+
+Interviewer
+35 minutes 15 seconds35:15
+Interviewer 35 minutes 15 seconds
+See, it all depends on I know what all you have been covering most of the services, but maybe the mentioned ones you should be more into that whatever you mention in general.
+SG
+Candidate
+35 minutes 27 seconds35:27
+Candidate 35 minutes 27 seconds
+Yep.
